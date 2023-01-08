@@ -52,7 +52,7 @@ const PostPage = (props) => {
 
   const closeModal = () => {
     setSharing(false);
-    // pitchShare();
+    // FeedShare();
     // props.hprops();
   };
 
@@ -60,12 +60,12 @@ const PostPage = (props) => {
     setSharedBody(event.target.value);
   };
 
-  const getRunByUserIdAndPitchId = () => {
+  const getRunByUserIdAndFeedId = () => {
     let options = {
       method: "get",
       url:
         global.config.ROOTURL.prod +
-        `/pitch/run/getRunByUserIdAndPitchId/${userId}/${postObj._id}`,
+        `/feed/run/getRunByUserIdAndFeedId/${userId}/${postObj._id}`,
       headers: {
         Authorization: "Bearer " + accessToken,
       },
@@ -84,12 +84,12 @@ const PostPage = (props) => {
   // const [youtubeUrl, setyoutubeUrl] = useState("");
 
   useEffect(() => {
-    global.config.socketInstance.on("onPitchChange", async (updatedValue) => {
-      console.log("onPitchChange 2", updatedValue);
+    global.config.socketInstance.on("onFeedChange", async (updatedValue) => {
+      console.log("onFeedChange 2", updatedValue);
       try {
         if (updatedValue._id === postObj._id) {
           setPostObj(updatedValue);
-          getRunByUserIdAndPitchId();
+          getRunByUserIdAndFeedId();
         }
       } catch (err) {
         console.log("error on run change", err);
@@ -99,7 +99,7 @@ const PostPage = (props) => {
 
   useEffect(() => {
     setOwnPost(userId === postObj.userId);
-    getRunByUserIdAndPitchId();
+    getRunByUserIdAndFeedId();
   }, [popupData]);
 
   useEffect(() => {
@@ -112,7 +112,7 @@ const PostPage = (props) => {
   const getCommentData = (event) => {
     setComment(event.target.value);
     setCommentData({
-      pitchId: postObj._id,
+      FeedId: postObj._id,
       commentText: event.target.value,
     });
   };
@@ -125,7 +125,7 @@ const PostPage = (props) => {
   const postComment = () => {
     const submitComment = {
       method: "POST",
-      url: global.config.ROOTURL.prod + "/pitch/comment/create",
+      url: global.config.ROOTURL.prod + "/feed/comment/create",
       headers: {
         Authorization: "Bearer " + accessToken,
         "Content-Type": "application/json",
@@ -146,14 +146,14 @@ const PostPage = (props) => {
   const sharePost = () => {
     const shared = {
       method: "POST",
-      url: global.config.ROOTURL.prod + "/pitch/shared",
+      url: global.config.ROOTURL.prod + "/feed/shared",
       headers: {
         Authorization: "Bearer " + accessToken,
         "Content-Type": "application/json",
       },
       data: {
         comment: sharedBody,
-        pitchId: postObj._id,
+        FeedId: postObj._id,
       },
     };
     axios(shared)
@@ -161,7 +161,7 @@ const PostPage = (props) => {
         closeModal();
       })
       .then(() => {
-        navigate("/pitch");
+        navigate("/feed");
       })
       .catch((error) => {
         setShowRuns(!showRuns);
@@ -258,10 +258,10 @@ const PostPage = (props) => {
           postObj?.actedFirstName ? "" : "activity-hidden"
         }`}
       >
-        {postObj.tag === "PITCHCOMMENT"
-          ? `${postObj.actedFirstName} ${postObj.actedLastname} has commented on this pitch `
-          : postObj.tag === "PITCHRUN"
-          ? `${postObj.actedFirstName} ${postObj.actedLastname} has given ${postObj.actedRun} runs on this pitch `
+        {postObj.tag === "FeedCOMMENT"
+          ? `${postObj.actedFirstName} ${postObj.actedLastname} has commented on this Feed `
+          : postObj.tag === "FeedRUN"
+          ? `${postObj.actedFirstName} ${postObj.actedLastname} has given ${postObj.actedRun} runs on this Feed `
           : ""}
         <ReactTimeAgo
           date={
@@ -403,7 +403,7 @@ const PostPage = (props) => {
           <img src={Comments} className="icon-btn" alt="" role="button" />
           <div className="comments-stat">
             {postObj.postCommentCount +
-              (postlocation === "/pitch" &&
+              (postlocation === "/feed" &&
                 (postObj.postCommentCount === 1 ? " Comment" : " Comments"))}
           </div>
           <div className="mobile-comments-stat">{postObj.postCommentCount}</div>
@@ -413,7 +413,7 @@ const PostPage = (props) => {
           <div className="share-btn-container" onClick={() => handleOpen()}>
             <img src={Share} className="icon-btn" alt="" role="button" />
             <div className="comments-stat">
-              {postlocation === "/pitch" && " Share"}
+              {postlocation === "/feed" && " Share"}
             </div>
           </div>
           <div className={`share-modal ${sharing ? "visible" : "hidden"}`}>

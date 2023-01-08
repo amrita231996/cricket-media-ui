@@ -8,8 +8,8 @@ import logout from './logout'
 import myProfile from './myProfile'
 import notification from './notification'
 import onBoarding from './onBoarding'
-import ownPitch from './ownPitch'
-import pitch from './pitch'
+import ownFeed from './ownFeed'
+import Feed from './feed'
 import registration from './registration'
 import resetPassword from './resetPassword'
 import searchByPost from './searchByPost'
@@ -30,8 +30,8 @@ const reducers = combineReducers({
   myProfile,
   notification,
   onBoarding,
-  ownPitch,
-  pitch,
+  ownFeed,
+  Feed,
   registration,
   resetPassword,
   searchByPost,

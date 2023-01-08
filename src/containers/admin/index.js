@@ -53,7 +53,7 @@ const AdminDashboard = () => {
     axios(getUserInfo)
       .then((response) => {
         if(response.data.role !== "SuperAdmin" && response.data.role !== "Admin") {
-          navigate("/pitch");
+          navigate("/feed");
         }
         setUserInfo({
           firstName: response.data.firstName

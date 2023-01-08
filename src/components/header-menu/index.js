@@ -49,8 +49,8 @@ const HeaderMenu = () => {
             </div>
             <div className="menu-items">
                     <li>
-                        <NavLink to='/pitch' className={isActive => `nav-link ${isActive?'active':''}`}>
-                                    Pitch
+                        <NavLink to='/feed' className={isActive => `nav-link ${isActive?'active':''}`}>
+                                    Feed
                         </NavLink>
                     </li>
                     {/* <li>

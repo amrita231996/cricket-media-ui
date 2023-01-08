@@ -83,14 +83,14 @@ const ShareModal = (props) => {
   const sharePost = () => {
     const shared = {
       method: "POST",
-      url: global.config.ROOTURL.prod + "/pitch/shared",
+      url: global.config.ROOTURL.prod + "/feed/shared",
       headers: {
         Authorization: "Bearer " + accessToken,
         'Content-Type': 'application/json'
       },
       data: {
         comment: formContent.message,
-        pitchId: postObj._id,
+        FeedId: postObj._id,
       }
     }
     axios(shared)
@@ -99,7 +99,7 @@ const ShareModal = (props) => {
     handleModalClose();
     })
   .then((response) => {
-    navigate("/pitch")
+    navigate("/feed")
   })
   .catch((error) => {
     if (error?.response?.status == 401) { 

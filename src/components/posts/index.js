@@ -7,7 +7,7 @@ import "./index.scss";
 import useScroller from "../../commons/useScroller_JSON_ARG";
 
 const Posts = (props) => {
-  const { filter, uid, pitchCreatedProps } = props;
+  const { filter, uid, FeedCreatedProps } = props;
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
   const [showNewFeedBaner, setShowNewFeedBaner] = useState(false);
@@ -24,7 +24,7 @@ const Posts = (props) => {
 
   useEffect(() => {
     setShouldLoadPage(!shouldLoadPage);
-  }, [pitchCreatedProps])
+  }, [FeedCreatedProps])
 
   useEffect(() => {
     setPageNum(1);
@@ -32,12 +32,12 @@ const Posts = (props) => {
   }, [shouldLoadPage])
 
   if (filter) {
-    if (filter === "all_pitches") {
-      url = global.config.ROOTURL.prod + `/pitch/getAll/${pageNum}/${global.config.pagePerSize}/${startDate}`;
-    } else if (filter === "my_pitches") {
-      url = global.config.ROOTURL.prod + `/pitch/getMyPitch/${pageNum}/${process.env.pagePerSize}`;
-    } else if (filter === "user_pitches") {
-      url = global.config.ROOTURL.prod + "/pitch/pitchByUserId/" + uid + `/${pageNum}/${process.env.pagePerSize}`;
+    if (filter === "all_Feedes") {
+      url = global.config.ROOTURL.prod + `/feed/getAll/${pageNum}/${global.config.pagePerSize}/${startDate}`;
+    } else if (filter === "my_Feedes") {
+      url = global.config.ROOTURL.prod + `/feed/getMyFeed/${pageNum}/${process.env.pagePerSize}`;
+    } else if (filter === "user_Feedes") {
+      url = global.config.ROOTURL.prod + "/feed/feedByUserId/" + uid + `/${pageNum}/${process.env.pagePerSize}`;
     }
   }
 
@@ -68,8 +68,8 @@ const Posts = (props) => {
   );
 
   useEffect(() => {
-    global.config.socketInstance.on("onPitchCreated", async (followers) => {
-      console.log('onPitchCreated',followers);
+    global.config.socketInstance.on("onFeedCreated", async (followers) => {
+      console.log('onFeedCreated',followers);
       try {
         if (followers.includes(userId)) {
           setShowNewFeedBaner(true);

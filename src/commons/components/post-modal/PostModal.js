@@ -132,11 +132,11 @@ const PostModal = (props) => {
   const [postMediaUrl, setPostMediaUrl] = useState("");
 
   // Create PostHashTag
-  const createPostHashTag = async (_id, hashTagText, pitchId) => {
+  const createPostHashTag = async (_id, hashTagText, FeedId) => {
     const data = {
       hashTagId: _id,
       hashTagText: hashTagText,
-      pitchId: pitchId,
+      FeedId: FeedId,
     };
     const options = {
       method: "POST",
@@ -162,7 +162,7 @@ const PostModal = (props) => {
   };
 
   // Create Hashtags
-  const createHashTag = async (hashtags, pitchId) => {
+  const createHashTag = async (hashtags, FeedId) => {
     if (hashtags && hashtags.length) {
       for (let index = 0; index < hashtags.length; index += 1) {
         const element = hashtags[index];
@@ -187,7 +187,7 @@ const PostModal = (props) => {
         axios(options)
           .then(({ data }) => {
             console.log(data);
-            createPostHashTag(data._id, data.hashTagText, pitchId);
+            createPostHashTag(data._id, data.hashTagText, FeedId);
           })
           .catch((error) => {
             if (error?.response?.status == 401) {
@@ -201,7 +201,7 @@ const PostModal = (props) => {
   const [mentionedUsers, setMentionedUsers] = useState([]);
 
   // Create PostTags
-  const createProfileTags = async (mentions, pitchDescription, pitchId) => {
+  const createProfileTags = async (mentions, FeedDescription, FeedId) => {
     if (mentions && mentions.length) {
       const users = [];
       const mentionedUserDetails = [];
@@ -265,8 +265,8 @@ const PostModal = (props) => {
                 profileTagedUserId: data._id,
                 profileTagedUserName: data.firstName + " " + data.lastName,
                 profileTagedUserProfilePhoto: data.profilePhoto,
-                pitchId: pitchId,
-                postMessage: pitchDescription,
+                FeedId: FeedId,
+                postMessage: FeedDescription,
               },
             };
             axios(creationOptions)
@@ -356,7 +356,7 @@ const PostModal = (props) => {
   const savePostText = (optionData) => {
     let submitPostOptions = {
       method: "post",
-      url: global.config.ROOTURL.prod + "/pitch/create",
+      url: global.config.ROOTURL.prod + "/feed/create",
       headers: {
         Authorization: "Bearer " + accessToken,
       },

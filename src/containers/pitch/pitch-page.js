@@ -7,19 +7,19 @@ import Header from "../../components/header";
 import Suggestions from "../../components/suggestions";
 import PostContext from "../../context/post";
 import RegistrationBonus from "../../components/registration-bonus";
-import PitchPage from "../../components/posts/PitchPage";
+import FeedPage from "../../components/posts/feedPage";
 import "./index.scss";
 import { useParams } from "react-router-dom";
 import AppContext from "../../context/AppContext";
 
-const PitchesPage = () => {
+const FeedesPage = () => {
   const params = useParams();
   const pid = params.pid;
 
   const [showForm, setShowForm] = useState(false);
-  const [isPitch, setIsPitch] = useState(true);
+  const [isFeed, setIsFeed] = useState(true);
   const [url, setURL] = useState("");
-  const pitchURL = "/pitch";
+  const FeedURL = "/feed";
 
   const appContext = useContext(AppContext);
   const { setShowAdd, setShowFooter } = appContext
@@ -31,7 +31,7 @@ const PitchesPage = () => {
 
   const handlePostClick = () => {
     // console.log(url)
-    if (pitchURL === url) {
+    if (FeedURL === url) {
       setShowForm(!showForm);
     }
   };
@@ -47,10 +47,10 @@ const PitchesPage = () => {
         toggleShowForm: handleCancelPost,
       }}
     >
-      <div className="page pitch">
+      <div className="page Feed">
         <RegistrationBonus />
-        <main className="pitch-main">
-          {pid && <PitchPage pid={pid} test={"Test"} />}
+        <main className="Feed-main">
+          {pid && <FeedPage pid={pid} test={"Test"} />}
           <Suggestions />
         </main>
         {/* <Footer handlePostClick={handlePostClick} setURL={setURL}/> */}
@@ -59,4 +59,4 @@ const PitchesPage = () => {
   );
 };
 
-export default PitchesPage;
+export default FeedesPage;

@@ -1,6 +1,6 @@
 @media screen and (min-width: 769px) {
 
-  .pitch-main {
+  .Feed-main {
     display: flex;
     max-width: 85%;
     margin: auto;
@@ -8,7 +8,7 @@
     // padding-top:25px;
     padding-bottom: 100px;
     }
-    .page.pitch {
+    .page.Feed {
         background-color: #e5e5e5;
         min-height: 100vh;
     }
@@ -16,7 +16,7 @@
 
 @media screen and (max-width: 769px) {
 
-    .pitch-main {
+    .Feed-main {
       display: flex;
       max-width: 100%;
       margin: auto;
@@ -24,7 +24,7 @@
       padding-bottom: 100px;
   
       }
-      .page.pitch {
+      .page.Feed {
         background-color: #e5e5e5;
         min-height: 100vh;
     }

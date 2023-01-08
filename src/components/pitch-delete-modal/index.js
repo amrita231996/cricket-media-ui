@@ -35,7 +35,7 @@ const styleMobile = {
   borderRadius: 5,
 };
 
-export default function PitchDelete(props) {
+export default function FeedDelete(props) {
   const matches = useMediaQuery("(min-width:600px)");
   const [style, setStyle] = useState();
   const {post_id} = props;
@@ -63,7 +63,7 @@ export default function PitchDelete(props) {
             component="h2"
             sx={{}}
           >
-            Delete this pitch?
+            Delete this Feed?
           </Typography>
             
           <div style={{ flexDirection: 'row' }}>

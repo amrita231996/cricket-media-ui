@@ -6,18 +6,18 @@ import "./index.scss";
 import { getStorageItem } from "../../utils/sessionStorage";
 import PostPage from "./post-page";
 
-const PitchPage = (props) => {
+const FeedPage = (props) => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState(null);
   const accessToken = getStorageItem("token");
   const { pid } = props;
 
-  console.log("pitch page", props);
+  console.log("Feed page", props);
 
-  const fetchPitches = () => {
+  const fetchFeedes = () => {
     axios({
       method: "get",
-      url: global.config.ROOTURL.prod + "/pitch/pitchById/" + pid,
+      url: global.config.ROOTURL.prod + "/feed/feedById/" + pid,
       headers: {
         Authorization: "Bearer " + accessToken,
       },
@@ -37,13 +37,13 @@ const PitchPage = (props) => {
   };
 
   useEffect(() => {
-    fetchPitches();
+    fetchFeedes();
    
   }, [pid]);
 
   return (
     <>
-      <div className="component posts pitch-page">
+      <div className="component posts Feed-page">
         {/* {posts.map((post, index) => {
           return <Post key={index} post={post} accessToken={accessToken} />;
         })} */}
@@ -54,4 +54,4 @@ const PitchPage = (props) => {
   );
 };
 
-export default PitchPage;
+export default FeedPage;

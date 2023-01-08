@@ -28,7 +28,7 @@ const Commentpagination = ({ id }) => {
     method: "GET",
     url:
       global.config.ROOTURL.prod +
-      `/pitch/comment/getByPitchId/${id}/${pageNum}/${global.config.pagePerSize}`,
+      `/feed/comment/getByFeedId/${id}/${pageNum}/${global.config.pagePerSize}`,
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",

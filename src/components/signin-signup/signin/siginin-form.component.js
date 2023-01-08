@@ -124,7 +124,7 @@ export default function SignInForm({ breakPoint }) {
         ) {
           navigate("/onboarding");
         } else if (getAuthStatus()) {
-          navigate("/pitch");
+          navigate("/feed");
         }
       }
     }

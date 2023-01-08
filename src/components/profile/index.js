@@ -163,7 +163,7 @@ const Profile = (props) => {
   const [pagePerSize, setPagePerSize] = useState(global.config.pagePerSize);
   const [url, setUrl] = useState(
     global.config.ROOTURL.prod +
-    "/pitch/pitchByUserId/" +
+    "/feed/feedByUserId/" +
     userId +
     "/" +
     pageNum +
@@ -228,7 +228,7 @@ const Profile = (props) => {
             ? response.data.followersCount
             : 0,
           totalRun: response.data.totalRun ? response.data.totalRun : 0,
-          pitchCount: response.data.pitchCount ? response.data.pitchCount : 0,
+          FeedCount: response.data.FeedCount ? response.data.FeedCount : 0,
         });
       })
       .catch((error) => {
@@ -461,7 +461,7 @@ const Profile = (props) => {
                 <div className="label_container">
                   <label className="profile_lable_text">Post</label>
                   <label className="profile_lable_number">
-                    {profileInitialData.pitchCount}
+                    {profileInitialData.FeedCount}
                   </label>
                 </div>
               </div>

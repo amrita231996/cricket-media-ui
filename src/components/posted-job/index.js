@@ -153,7 +153,7 @@ axios(saveJobInfo).then((response) => {
               
                 
                 <ThemeProvider theme={theme}>
-                {/* <main className="pitch-main"> */}
+                {/* <main className="Feed-main"> */}
                 <Card variant="outlined" sx={{ minWidth: 275, mb: .3, borderRadius: 3 }}  >
                     {/* <React.Fragment> */}
                     <Grid container spacing={mobileView ? 0 : 2}>

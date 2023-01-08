@@ -1,36 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const initialState = {
-  ownPitchData: null,
-  ownPitchIsLoading: false,
-  ownPitchError: null,
+  ownFeedData: null,
+  ownFeedIsLoading: false,
+  ownFeedError: null,
 }
 
-export const ownPitchSlice = createSlice({
-  name: 'ownPitch',
+export const ownFeedSlice = createSlice({
+  name: 'ownFeed',
   initialState,
   reducers: {
-    fetchOwnPitchData: (state) => ({
+    fetchOwnFeedData: (state) => ({
       ...state,
-      ownPitchIsLoading: !initialState.ownPitchIsLoading,
+      ownFeedIsLoading: !initialState.ownFeedIsLoading,
     }),
-    setOwnPitchData: (state, action) => ({
+    setOwnFeedData: (state, action) => ({
       ...initialState,
       ...state,
-      ownPitchData: action.payload || initialState.data,
-      ownPitchIsLoading: initialState.ownPitchIsLoading,
+      ownFeedData: action.payload || initialState.data,
+      ownFeedIsLoading: initialState.ownFeedIsLoading,
     }),
-    setOwnPitchLoading: (state, action) => ({
+    setOwnFeedLoading: (state, action) => ({
       ...initialState,
       ...state,
-      ownPitchIsLoading: (typeof action.payload === 'undefined') ? initialState.ownPitchIsLoading : action.payload,
+      ownFeedIsLoading: (typeof action.payload === 'undefined') ? initialState.ownFeedIsLoading : action.payload,
     }),
-    setOwnPitchError: (state, action) => ({
+    setOwnFeedError: (state, action) => ({
       ...initialState,
       ...state,
-      ownPitchError: action.payload || initialState.ownPitchError,
+      ownFeedError: action.payload || initialState.ownFeedError,
     }),
-    resetOwnPitch: (state) => ({
+    resetOwnFeed: (state) => ({
       ...initialState,
     }),
   },
@@ -38,7 +38,7 @@ export const ownPitchSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const {
-  fetchOwnPitchData, setOwnPitchLoading, setOwnPitchData, resetOwnPitch, setOwnPitchError,
-} = ownPitchSlice.actions
+  fetchOwnFeedData, setOwnFeedLoading, setOwnFeedData, resetOwnFeed, setOwnFeedError,
+} = ownFeedSlice.actions
 
-export default ownPitchSlice.reducer
+export default ownFeedSlice.reducer

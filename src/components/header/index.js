@@ -88,7 +88,7 @@ const Header = (props) => {
   const getRuns = () => {
     const getTotalRun = {
       method: "GET",
-      url: global.config.ROOTURL.prod + "/pitch/getTotalRun",
+      url: global.config.ROOTURL.prod + "/feed/getTotalRun",
       headers: {
         Authorization: "Bearer " + accessToken,
       },
@@ -158,7 +158,7 @@ const Header = (props) => {
     <header className="header">
       <div className="header-cnt">
         <div className="logo-block">
-          <NavLink to="/pitch">
+          <NavLink to="/feed">
             <img src={Logo} alt="CricketMedia" />
             <span className="label title-label">Cricket Media</span>
           </NavLink>
@@ -185,12 +185,12 @@ const Header = (props) => {
         {!onlyLogo && (
           <div className="desktop-only nav-links">
             <NavLink
-              to="/pitch"
+              to="/feed"
               className={`nav-link ${
-                window.location.pathname.includes("/pitch") ? "active" : ""
+                window.location.pathname.includes("/feed") ? "active" : ""
               }`}
             >
-              Pitch
+              Feed
             </NavLink>
             <NavLink
               to="/deals"

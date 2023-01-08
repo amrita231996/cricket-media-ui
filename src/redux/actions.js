@@ -6,8 +6,8 @@ import * as logoutReducer from './reducers/logout'
 import * as myProfileReducer from './reducers/myProfile'
 import * as notificationReducer from './reducers/notification'
 import * as onBoardingReducer from './reducers/onBoarding'
-import * as ownPitchReducer from './reducers/ownPitch'
-import * as pitchReducer from './reducers/pitch'
+import * as ownFeedReducer from './reducers/ownFeed'
+import * as FeedReducer from './reducers/feed'
 import * as registrationReducer from './reducers/registration'
 import * as resetPasswordReducer from './reducers/resetPassword'
 import * as searchByPostReducer from './reducers/searchByPost'
@@ -26,8 +26,8 @@ const sagaActions = {
     MYPROFILE_DATA_FETCH: `${myProfileReducer.fetchMyProfileData.type}`,
     NOTIFICATION_DATA_FETCH: `${notificationReducer.fetchNotificationData.type}`,
     ONBOARDING_DATA_FETCH: `${onBoardingReducer.fetchOnBoardingData.type}`,
-    OWNPITCH_DATA_FETCH: `${ownPitchReducer.fetchOwnPitchData.type}`,
-    PITCH_DATA_FETCH: `${pitchReducer.fetchPitchData.type}`,
+    OWNFeed_DATA_FETCH: `${ownFeedReducer.fetchOwnFeedData.type}`,
+    Feed_DATA_FETCH: `${FeedReducer.fetchFeedData.type}`,
     REGISTRATION_DATA_FETCH: `${registrationReducer.fetchRegistrationData.type}`,
     RESETPASSWORD_DATA_FETCH: `${resetPasswordReducer.fetchResetPasswordData.type}`,
     SEARCHBYPOST_DATA_FETCH: `${searchByPostReducer.fetchSearchByPostData.type}`,

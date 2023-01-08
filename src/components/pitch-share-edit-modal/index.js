@@ -37,7 +37,7 @@ const styleMobile = {
   borderRadius: 5,
 };
 
-export default function PitchEdit(props) {
+export default function FeedEdit(props) {
   const matches = useMediaQuery("(min-width:600px)");
   const {postId, content, image, sharedPost} = props;
   const [newContent, setNewContent] = React.useState(content);
@@ -74,7 +74,7 @@ export default function PitchEdit(props) {
             variant="h6"
             component="h2"
             sx={{}}>
-            Edit Pitch
+            Edit Feed
           </Typography>
           <div style={{ flexDirection: 'row' }}>
             <TextField value={newContent} fullWidth 

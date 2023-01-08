@@ -9,8 +9,8 @@ import * as logout from './logout'
 import * as myProfile from './myProfile'
 import * as notification from './notification'
 import * as onBoarding from './onBoarding'
-import * as ownPitch from './ownPitch'
-import * as pitch from './pitch'
+import * as ownFeed from './ownFeed'
+import * as Feed from './feed'
 import * as registration from './registration'
 import * as resetPassword from './resetPassword'
 import * as searchByPost from './searchByPost'
@@ -30,8 +30,8 @@ export default function* rootSaga() {
     takeLatest(sagaActions.MYPROFILE_DATA_FETCH, myProfile.loginApiSaga),
     takeLatest(sagaActions.NOTIFICATION_DATA_FETCH, notification.loginApiSaga),
     takeLatest(sagaActions.ONBOARDING_DATA_FETCH, onBoarding.loginApiSaga),
-    takeLatest(sagaActions.OWNPITCH_DATA_FETCH, ownPitch.loginApiSaga),
-    takeLatest(sagaActions.PITCH_DATA_FETCH, pitch.loginApiSaga),
+    takeLatest(sagaActions.OWNFeed_DATA_FETCH, ownFeed.loginApiSaga),
+    takeLatest(sagaActions.Feed_DATA_FETCH, Feed.loginApiSaga),
     takeLatest(sagaActions.REGISTRATION_DATA_FETCH, registration.loginApiSaga),
     takeLatest(sagaActions.RESETPASSWORD_DATA_FETCH, resetPassword.loginApiSaga),
     takeLatest(sagaActions.SEARCHBYPOST_DATA_FETCH, searchByPost.loginApiSaga),

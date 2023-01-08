@@ -13,12 +13,12 @@ import { useMediaQuery } from '@mui/material';
 
 const Feeds = (props) => {
     const mobileView = useMediaQuery("(max-width:899px)");
-    const {pitchCreatedProps} = props;
-    const [pitchCreated,setPitchcreated] = useState(false);
+    const {FeedCreatedProps} = props;
+    const [FeedCreated,setFeedcreated] = useState(false);
 
     useEffect(()=>{
-        setPitchcreated(!pitchCreated);
-    },[pitchCreatedProps]);
+        setFeedcreated(!FeedCreated);
+    },[FeedCreatedProps]);
 
     return <div className="component feeds">
         <div>
@@ -26,11 +26,11 @@ const Feeds = (props) => {
         </div>
         <div style={{paddingTop: "15px", paddingBottom: "15px", display: `${mobileView ? "none" : ""}`}} >
             <Alert hprops={()=>{
-                setPitchcreated(!pitchCreated);
+                setFeedcreated(!FeedCreated);
                 }}/>
         </div>
-            <Posts filter={'all_pitches'} 
-            pitchCreatedProps={pitchCreated} 
+            <Posts filter={'all_Feedes'} 
+            FeedCreatedProps={FeedCreated} 
             />
     </div>
 }

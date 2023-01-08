@@ -16,7 +16,7 @@ const ProfileList = ({userId}) => {
   // const [url, setUrl] = useState();
 
   let url = global.config.ROOTURL.prod +
-  "/pitch/pitchByUserId/" +
+  "/feed/feedByUserId/" +
   userId +
   "/" +
   pageNum +

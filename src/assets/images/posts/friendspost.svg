@@ -14,7 +14,7 @@
     <text id="Deals" transform="translate(556 305)" fill="#131639" font-size="25" font-family="Poppins-Light, Poppins" font-weight="300"><tspan x="0" y="0">Deals</tspan></text>
     <text id="I_Support" data-name="I Support" transform="translate(535 386)" fill="#131639" font-size="25" font-family="Poppins-Light, Poppins" font-weight="300"><tspan x="0" y="0">I Support</tspan></text>
     <text id="About_us" data-name="About us" transform="translate(536 468)" fill="#131639" font-size="25" font-family="Poppins-Light, Poppins" font-weight="300"><tspan x="0" y="0">About us</tspan></text>
-    <text id="Pitch" transform="translate(559 141)" fill="#131639" font-size="25" font-family="Poppins-SemiBold, Poppins" font-weight="600"><tspan x="0" y="0">Pitch</tspan></text>
+    <text id="Feed" transform="translate(559 141)" fill="#131639" font-size="25" font-family="Poppins-SemiBold, Poppins" font-weight="600"><tspan x="0" y="0">Feed</tspan></text>
     <line id="Line_157" data-name="Line 157" x2="63" transform="translate(560 151)" fill="none" stroke="#ffd73b" stroke-linecap="round" stroke-width="4"/>
   </g>
 </svg>

@@ -81,7 +81,7 @@ const Suggestion = (props) => {
     checkFollower();
     const getTotalRun = {
       method: "GET",
-      url: global.config.ROOTURL.prod + "/pitch/getTotalRun",
+      url: global.config.ROOTURL.prod + "/feed/getTotalRun",
       headers: {
         Authorization: "Bearer " + accessToken,
       },

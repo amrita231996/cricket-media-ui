@@ -36,7 +36,7 @@ const UnAuthGuardRoute = ({ children }) => {
   useEffect(() => { if (!isValid) { validateToken() } }, [isValid])
 
   const publicRoute = () => (getAuthStatus() && isValid && 
-  (window.location.origin + '/' === window.location.href) ? <Navigate to={appRoutes.pitch} replace /> : children)
+  (window.location.origin + '/' === window.location.href) ? <Navigate to={appRoutes.Feed} replace /> : children)
   return publicRoute()
 }
 

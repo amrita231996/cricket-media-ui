@@ -1,5 +1,5 @@
 export const appRoutes = {
-    pitch: '/pitch', // AuthGuardRoute
+    Feed: '/feed', // AuthGuardRoute
     onboarding: '/onboarding', // AuthGuardRoute
     passwordReset: '/passwordReset', // AuthGuardRoute
 

@@ -125,7 +125,7 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
 
   const closeModal = () => {
     setSharing(false);
-    // pitchShare();
+    // FeedShare();
     props.hprops();
   };
 
@@ -137,20 +137,20 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
 
   useEffect(() => {
     setOwnPost(userId === postObj.userId);
-    getPitchDetailByPitchId();
-    getRunByUserIdAndPitchId();
-    // getCommentByPitchId();
+    getFeedDetailByFeedId();
+    getRunByUserIdAndFeedId();
+    // getCommentByFeedId();
     // {postObj.comments && setComments(postObj.comments.length )}
     // getCommentUser();
     // getRuns();
     // checkRuns();
     console.log("hello 3");
-    global.config.socketInstance.on("onPitchChange", async (updatedValue) => {
+    global.config.socketInstance.on("onFeedChange", async (updatedValue) => {
       try {
-        console.log("------onPitchChange------ 3", updatedValue);
+        console.log("------onFeedChange------ 3", updatedValue);
         if (updatedValue._id === postObj._id) {
           setPostObj(updatedValue);
-          getRunByUserIdAndPitchId();
+          getRunByUserIdAndFeedId();
         }
       } catch (err) {
         // console.log('error on run change', err);
@@ -169,12 +169,12 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
     setComments("");
   };
 
-  const getRunByUserIdAndPitchId = () => {
+  const getRunByUserIdAndFeedId = () => {
     let options = {
       method: "get",
       url:
         global.config.ROOTURL.prod +
-        `/pitch/run/getRunByUserIdAndPitchId/${userId}/${postObj._id}`,
+        `/feed/run/getRunByUserIdAndFeedId/${userId}/${postObj._id}`,
       headers: {
         Authorization: "Bearer " + accessToken,
       },
@@ -311,20 +311,20 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
     console.log("commentData " + comments);
     const submitComment = {
       method: "POST",
-      url: global.config.ROOTURL.prod + "/pitch/comment/create",
+      url: global.config.ROOTURL.prod + "/feed/comment/create",
       headers: {
         Authorization: "Bearer " + accessToken,
         "Content-Type": "application/json",
       },
       data: {
-        pitchId: postObj._id,
+        FeedId: postObj._id,
         commentText: comments,
       },
     };
     console.log(submitComment);
     axios(submitComment)
       .then(() => {
-        // getCommentByPitchId();
+        // getCommentByFeedId();
         setComment("");
       })
       .catch((error) => {
@@ -338,10 +338,10 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
       });
   };
 
-  const getPitchDetailByPitchId = () => {
+  const getFeedDetailByFeedId = () => {
     const option = {
       method: "GET",
-      url: global.config.ROOTURL.prod + `/pitch/pitchById/${postObj._id}`,
+      url: global.config.ROOTURL.prod + `/feed/feedById/${postObj._id}`,
       headers: {
         Authorization: "Bearer " + accessToken,
         "Content-Type": "application/json",
@@ -359,14 +359,14 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
   const sharePost = () => {
     const shared = {
       method: "POST",
-      url: global.config.ROOTURL.prod + "/pitch/shared",
+      url: global.config.ROOTURL.prod + "/feed/shared",
       headers: {
         Authorization: "Bearer " + accessToken,
         "Content-Type": "application/json",
       },
       data: {
         comment: sharedBody,
-        pitchId: postObj.pitchId,
+        FeedId: postObj.FeedId,
       },
     };
     axios(shared)
@@ -374,7 +374,7 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
         closeModal();
       })
       .then(() => {
-        navigate("/pitch");
+        navigate("/feed");
       })
       .catch((error) => {
         setShowRuns(!showRuns);
@@ -748,7 +748,7 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
                       >
                         {postObj.userName}
                       </Link>
-                      <p className="pitch-date-time">
+                      <p className="Feed-date-time">
                         {postObj.createdDate && (
                           <ReactTimeAgo
                             date={postObj.createdDate}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function CommentUseScroller(pageNum, req, pitchId) {
+function CommentUseScroller(pageNum, req, FeedId) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
   const [list, setList] = useState([]);
@@ -11,7 +11,7 @@ function CommentUseScroller(pageNum, req, pitchId) {
   useEffect(() => {
     global.config.socketInstance.on("onNewCommentCreated", async (updatedValue) => {
       try {
-        if (updatedValue.postId === pitchId) {
+        if (updatedValue.postId === FeedId) {
           setList([{...updatedValue},...list].sort((a,b)=>(new Date(b.createdDate) - new Date(a.createdDate))));
         }
       } catch (err) {

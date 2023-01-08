@@ -17,12 +17,12 @@ import { useDispatch } from "react-redux";
 import { PathAction } from "../../redux/reducers/globalPath";
 import LeaderBoard from "../../components/leader-board";
 
-const PitchesPage = () => {
+const FeedesPage = () => {
   const [showForm, setShowForm] = useState(false);
-  const [isPitch, setIsPitch] = useState(true);
-  const [pitchCreated, setPitchcreated] = useState(false);
+  const [isFeed, setIsFeed] = useState(true);
+  const [FeedCreated, setFeedcreated] = useState(false);
   const [url, setURL] = useState("");
-  const pitchURL = "/pitch";
+  const FeedURL = "/feed";
   const path = window.location.pathname;
   const dispatch = useDispatch();
   dispatch(PathAction.handlePath({ payload: path }));
@@ -33,7 +33,7 @@ const PitchesPage = () => {
 
   const handlePostClick = () => {
     // console.log(url);
-    if (pitchURL === url) {
+    if (FeedURL === url) {
       setShowForm(!showForm);
     }
   };
@@ -51,8 +51,8 @@ const PitchesPage = () => {
         toggleShowForm: handleCancelPost,
       }}
     >
-      <div className="page pitch">
-        <main className="pitch-main">
+      <div className="page Feed">
+        <main className="Feed-main">
           <Grid container spacing={mobileView ? 0 : 2}>
             <Grid
               item
@@ -71,7 +71,7 @@ const PitchesPage = () => {
               lg={6}
               sx={{ padding: `${mobileView ? "0" : ""}` }}
             >
-              <Feeds pitchCreatedProps={pitchCreated} />
+              <Feeds FeedCreatedProps={FeedCreated} />
             </Grid>
             <Grid item sm={12} md={4} lg={3}>
               <Suggestions />
@@ -84,7 +84,7 @@ const PitchesPage = () => {
           handlePostClick={handlePostClick}
           setURL={setURL}
           hprops={() => {
-            setPitchcreated(!pitchCreated);
+            setFeedcreated(!FeedCreated);
           }}
         />
       </div>
@@ -92,4 +92,4 @@ const PitchesPage = () => {
   );
 };
 
-export default PitchesPage;
+export default FeedesPage;

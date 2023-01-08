@@ -5,7 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Paper from "@mui/material/Paper";
-import { ReactComponent as PitchIcon } from "../../assets/images/footer/pitch-icon.svg";
+import { ReactComponent as FeedIcon } from "../../assets/images/footer/feed-icon.svg";
 import { ReactComponent as PostIcon } from "../../assets/images/footer/post-icon.svg";
 import { ReactComponent as DealIcon } from "../../assets/images/footer/deal-icon.svg";
 import { ReactComponent as Bell } from "../../assets/images/icons/Notification.svg";
@@ -26,7 +26,7 @@ import { useSelector } from "react-redux";
 
 
 const Footer = (props) => {
-  const [value, setValue] = React.useState('pitch');
+  const [value, setValue] = React.useState('Feed');
   const [activeNotificationsCount, setActiveNotificationsCount] = useState(0);
   const ref = React.useRef(null);
   const [open, setOpen] = useState(false);
@@ -95,8 +95,8 @@ const Footer = (props) => {
   useEffect(()=>{
 
    
-    if(path==='/pitch'){
-      setValue('pitch')
+    if(path==='/feed'){
+      setValue('Feed')
     }else if(path==='/deals'){
       setValue('deal')
     }else if(path==='/notification'){
@@ -152,11 +152,11 @@ const Footer = (props) => {
             }}
           >
             <BottomNavigationAction
-              label="Pitch"
-              value='pitch'
+              label="Feed"
+              value='Feed'
               component={Link}
-              to="/pitch"
-              icon={<PitchIcon style={{ height: "25px", width: "25px" }} />}
+              to="/feed"
+              icon={<FeedIcon style={{ height: "25px", width: "25px" }} />}
              
             ></BottomNavigationAction>
             <BottomNavigationAction

@@ -1,36 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const initialState = {
-  pitchData: null,
-  pitchIsLoading: false,
-  pitchError: null,
+  FeedData: null,
+  FeedIsLoading: false,
+  FeedError: null,
 }
 
-export const pitchSlice = createSlice({
-  name: 'pitch',
+export const FeedSlice = createSlice({
+  name: 'Feed',
   initialState,
   reducers: {
-    fetchPitchData: (state) => ({
+    fetchFeedData: (state) => ({
       ...state,
-      pitchIsLoading: !initialState.pitchIsLoading,
+      FeedIsLoading: !initialState.FeedIsLoading,
     }),
-    setPitchData: (state, action) => ({
+    setFeedData: (state, action) => ({
       ...initialState,
       ...state,
-      pitchData: action.payload || initialState.data,
-      pitchIsLoading: initialState.pitchIsLoading,
+      FeedData: action.payload || initialState.data,
+      FeedIsLoading: initialState.FeedIsLoading,
     }),
-    setPitchLoading: (state, action) => ({
+    setFeedLoading: (state, action) => ({
       ...initialState,
       ...state,
-      pitchIsLoading: (typeof action.payload === 'undefined') ? initialState.pitchIsLoading : action.payload,
+      FeedIsLoading: (typeof action.payload === 'undefined') ? initialState.FeedIsLoading : action.payload,
     }),
-    setPitchError: (state, action) => ({
+    setFeedError: (state, action) => ({
       ...initialState,
       ...state,
-      pitchError: action.payload || initialState.pitchError,
+      FeedError: action.payload || initialState.FeedError,
     }),
-    resetPitch: (state) => ({
+    resetFeed: (state) => ({
       ...initialState,
     }),
   },
@@ -38,7 +38,7 @@ export const pitchSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const {
-  fetchPitchData, setPitchLoading, setPitchData, resetPitch, setPitchError,
-} = pitchSlice.actions
+  fetchFeedData, setFeedLoading, setFeedData, resetFeed, setFeedError,
+} = FeedSlice.actions
 
-export default pitchSlice.reducer
+export default FeedSlice.reducer

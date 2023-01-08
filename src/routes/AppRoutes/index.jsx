@@ -8,8 +8,8 @@ import UnAuthContainer from "../UnAuthContainer";
 import AuthContainer from "../AuthContainer";
 
 import Onboarding from "../../containers/onboarding";
-import PitchesPage from "../../containers/pitch/index";
-import PitchPage from "../../containers/pitch/pitch-page";
+import FeedesPage from "../../containers/feed/index";
+import FeedPage from "../../containers/feed/feed-page";
 import SearchPage from "../../containers/search";
 import AdminDashboard from "../../containers/admin";
 import AllEvents from '../../containers/all-events';
@@ -294,18 +294,18 @@ const AppRoutes = () => {
           }
         />
         <Route
-          path={"/pitch"}
+          path={"/feed"}
           element={
             <AuthGuardRoute>
-              <PitchesPage />
+              <FeedesPage />
             </AuthGuardRoute>
           }
         />
         <Route
-          path={"/pitch/:pid"}
+          path={"/feed/:pid"}
           element={
             <AuthGuardRoute>
-              <PitchPage />
+              <FeedPage />
             </AuthGuardRoute>
           }
         />
@@ -430,7 +430,7 @@ const AppRoutes = () => {
 
   const render = () => (
     <Routes>
-      {/* <Route path={appRoutes.pitch} element={<AuthGuardRoute><Navigate to={appRoutes.pitch} replace /></AuthGuardRoute>} /> */}
+      {/* <Route path={appRoutes.Feed} element={<AuthGuardRoute><Navigate to={appRoutes.Feed} replace /></AuthGuardRoute>} /> */}
       <Route path={appRoutes.any} element={<PublicRoutes />} />
     </Routes>
   );
