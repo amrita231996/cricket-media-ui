@@ -1,0 +1,194 @@
+@media screen and (min-width: 769px) {
+  .on-boarding {
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 389px;
+
+    & .enabled {
+      background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+    }
+
+    & .gtkm {
+      margin-top: 45px;
+      max-width: 550px;
+    }
+
+    & .restrict-75 {
+      max-width: 65%;
+      word-break: break-all;
+    }
+
+    & .gtkm-upload {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & .image-upload{
+           position: relative;
+           width: 100%;
+           margin-top: 10px;
+           border-radius: 50%;
+
+        & .image-user{
+            height: 60px;
+            width:60px;
+            object-fit: cover;
+            border-radius: 50%;
+            position: relative;
+            right: 3px;
+        }
+      }
+
+        & .image-upload>input {
+          display: none;
+      }
+
+  
+    }
+    & .gtkm-upload .ctas {
+      display: flex;
+      & .button {
+        margin-right: 15px;
+      }
+    }
+    & .gtkm-footer {
+      margin-top: 35px;
+      text-align: center;
+    }
+    & .limit {
+      display: inline-block;
+    }
+    & .interests {
+      display: flex;
+      flex-wrap: wrap;
+
+      & .interest {
+        flex-basis: 50%;
+        text-align: center;
+        margin-bottom: 15px;
+        cursor: pointer;
+      }
+    }
+
+    & .add-pic {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: #1a1919;
+    }
+  }
+
+  .greeting {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 40px;
+    color: #1a1919;
+    margin: 0;
+  }
+  .others-know {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: -0.41px;
+    color: #1a1919;
+    margin: 0;
+  }
+}
+.center {
+  text-align: center;
+}
+
+@media screen and (max-width: 769px) {
+
+  .on-boarding {
+    margin: auto;
+    background-color: white;
+    width: 100%;
+    height:100%;
+
+    & .gtkm {
+      margin-top: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      width: 100%;
+
+      & .input-element{
+        color:#000000;
+      }
+    }
+    
+    & .gtkm-upload-container{
+        padding: 20px;
+    }
+
+    & .restrict-75 {
+      max-width: 65%;
+      word-break: break-all;
+    }
+
+    & .gtkm-upload {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & .image-upload{
+        position: relative;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 50%;
+        
+
+     & .image-user{
+         height: 60px;
+         width:60px;
+         object-fit: cover;
+         border-radius: 50%;
+         position: relative;
+         right: 3px;
+     }
+   }
+
+        & .image-upload>input {
+          display: none;
+         
+        }
+    }
+   
+
+    & .gtkm-upload .ctas {
+      display: flex;
+      flex-direction: column;
+      & .button {
+        margin-right: 15px;
+        margin-bottom: 15px;
+      }
+    }
+    & .gtkm-footer {
+      margin-top: 35px;
+      text-align: center;
+    }
+    & .limit {
+      display: inline-block;
+    }
+    & .interests {
+      display: flex;
+      flex-wrap: wrap;
+
+      & .interest {
+        flex-basis: 50%;
+        text-align: center;
+        margin-bottom: 15px;
+        cursor: pointer;
+        & img {
+          width: 125px;
+        }
+       
+      }
+    }
+  }
+}

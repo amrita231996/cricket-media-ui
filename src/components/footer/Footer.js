@@ -7,7 +7,6 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Paper from "@mui/material/Paper";
 import { ReactComponent as FeedIcon } from "../../assets/images/footer/feed-icon.svg";
 import { ReactComponent as PostIcon } from "../../assets/images/footer/post-icon.svg";
-import { ReactComponent as DealIcon } from "../../assets/images/footer/deal-icon.svg";
 import { ReactComponent as Bell } from "../../assets/images/icons/Notification.svg";
 import { ReactComponent as NewBell } from "../../assets/images/icons/Notification_unread.svg";
 import { NavLink } from "react-router-dom";
@@ -159,13 +158,6 @@ const Footer = (props) => {
               icon={<FeedIcon style={{ height: "25px", width: "25px" }} />}
              
             ></BottomNavigationAction>
-            <BottomNavigationAction
-              label="Deals"
-              value='deal'
-              component={Link}
-              to="/deals"
-              icon={<DealIcon style={{ height: "25px", width: "25px" }} />}
-            />
              {/* {props.handlePostClick && ( */}
               <BottomNavigationAction
                 label="Post"

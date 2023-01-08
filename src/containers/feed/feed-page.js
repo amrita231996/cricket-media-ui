@@ -7,7 +7,7 @@ import Header from "../../components/header";
 import Suggestions from "../../components/suggestions";
 import PostContext from "../../context/post";
 import RegistrationBonus from "../../components/registration-bonus";
-import FeedPage from "../../components/posts/feedPage";
+import FeedPage from "../../components/feeds/index";
 import "./index.scss";
 import { useParams } from "react-router-dom";
 import AppContext from "../../context/AppContext";

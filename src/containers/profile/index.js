@@ -1,8 +1,4 @@
-import Deals from "../../components/deals";
 import Profile from "../../components/profile";
-import Header from "../../components/header";
-import Activities from "../../components/activities/activities";
-// import Preferences from "../../components/preferences/preferences";
 import "./index.scss";
 import { useContext, useEffect } from "react";
 import AppContext from "../../context/AppContext";

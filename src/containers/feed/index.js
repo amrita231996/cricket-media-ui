@@ -3,9 +3,7 @@ import { useContext, useState } from "react";
 import Feeds from "../../components/feeds";
 // import Footer from "../../components/footer";
 import Footer from "../../components/footer/Footer.js";
-import Header from "../../components/header";
 import Suggestions from "../../components/suggestions";
-import Events from "../../components/events";
 import PostContext from "../../context/post";
 import RegistrationBonus from "../../components/registration-bonus";
 import "./index.scss";
@@ -15,7 +13,6 @@ import { useMediaQuery } from "@mui/material";
 import AppContext from "../../context/AppContext";
 import { useDispatch } from "react-redux";
 import { PathAction } from "../../redux/reducers/globalPath";
-import LeaderBoard from "../../components/leader-board";
 
 const FeedesPage = () => {
   const [showForm, setShowForm] = useState(false);
@@ -62,7 +59,6 @@ const FeedesPage = () => {
               sx={{ display: `${mobileView ? "none" : ""}` }}
             >
               <img alt="" src={SideBar} style={{ width: "100%" }} />
-              <LeaderBoard />
             </Grid>
             <Grid
               item

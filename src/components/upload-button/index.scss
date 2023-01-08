@@ -1,0 +1,72 @@
+@media screen and (max-width: 769px) {
+    .upload-btn {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+    }
+    .setImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btnactive12 {
+        margin-left: 24px;
+        background-color: #00298e;
+        color: white;
+        height: 5vh;
+        width: 12vw;
+        font-size: 0.7rem;
+        text-transform: capitalize;
+        border-radius: 12px;
+        border: 2px;
+    }
+    .btndisable{
+        margin-left: 24px;
+        background-color: gray;
+        color: white;
+        height: 5vh;
+        width: 12vw;
+        font-size: 0.7rem;
+        text-transform: capitalize;
+        border-radius: 12px;
+        border: 2px;
+    }
+}
+
+@media screen and (min-width:769px) {
+    .upload-btn {
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+    }
+
+    .setImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btnactive12 {
+        margin-left: 24px;
+        background-color: #00298e;
+        color: white;
+        height: 5vh;
+        width: 7vw;
+        font-size: 0.7rem;
+        text-transform: capitalize;
+        border-radius: 12px;
+        border: 2px;
+    }
+    .btndisable{
+        margin-left: 24px;
+        background-color: gray;
+        color: white;
+        height: 5vh;
+        width: 7vw;
+        font-size: 0.7rem;
+        text-transform: capitalize;
+        border-radius: 12px;
+        border: 2px;
+    }
+}

@@ -1,7 +1,4 @@
-import LiveWire from "../../components/news/livewire";
-import Header from "../../components/header";
 import { Text, useContext, useEffect } from "react";
-import Poll from "../../components/poll/poll";
 import Styled from "@emotion/styled";
 import { Carousel } from "react-responsive-carousel";
 import NewImage from "../../assets/images/carousel/Slide1.png";

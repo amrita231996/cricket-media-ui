@@ -1,0 +1,12 @@
+.navbarSection {
+    background-color: unset !important;
+    box-shadow: unset !important;
+    & .firstSection_logo_text {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 34px;
+        text-transform: uppercase;
+        color: #0c5ba0;
+    }
+}

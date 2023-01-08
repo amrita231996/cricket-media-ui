@@ -3,7 +3,6 @@ import axios from "axios";
 import Bell from "../../assets/images/header/bell.svg";
 import NewBell from "../../assets/images/header/new_notification.png";
 import { useNavigate } from "react-router-dom";
-import NotifictionList from "../../containers/notification/list";
 import { clearStorage, getStorageItem } from "../../utils/sessionStorage";
 import { ClickAwayListener } from "@mui/material";
 
@@ -100,14 +99,6 @@ useEffect(()=>{
                 onClick={() => updateAllNotificationTillDate()}
               />
             )}
-            <div className="box">
-              <div className="display">
-                <NotifictionList
-                  list={custNotifications}
-                  isViewAllButtonShow={true}
-                />
-              </div>
-            </div>
           </div>
         </ClickAwayListener>
       </a>

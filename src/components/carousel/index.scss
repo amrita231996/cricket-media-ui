@@ -1,0 +1,26 @@
+.carousel-text {
+    position: relative !important;
+    bottom: 70px !important;
+}
+
+.fix-width {
+    & img {
+        border-radius: 12px;
+    }
+}
+@media screen and (max-width: 900px){
+    
+    .fix-width {
+        width: 100%;
+        margin:0;
+        padding:0;
+        
+        & img {
+            border-radius: 0;
+        }
+    }
+    ul{
+        padding:0;
+    }
+
+}

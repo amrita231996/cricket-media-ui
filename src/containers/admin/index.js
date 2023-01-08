@@ -21,7 +21,6 @@ import CloseIcon from '@mui/icons-material/Close';
 
 // Components
 import AdminSidebar from "../../components/admin-sidebar";
-import { Toolbar } from "@material-ui/core";
 
 const AdminDashboard = () => {
   const appContext = useContext(AppContext);

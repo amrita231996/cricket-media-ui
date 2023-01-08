@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  padding: 100px 50px;
+}
+
+.title-container {
+  display: flex;
+};
+
+.title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+
+  /* identical to box height */
+
+  color: #000000;
+
+  border-bottom: 5px solid #FFBA07;
+}
+.sub-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 51px;
+
+  color: #000000;
+  padding: 30px 0 30px 0;
+}
+.user-card {
+  display: flex;
+  margin: 25px 0;
+  padding: 20px;
+  background-color: #ffffff;
+  flex-direction: column;
+  border-radius: 15px;
+  width: auto;
+  height: 350px;
+  align-items: stretch;
+
+  & .avatar-image {
+    height: 78px;
+    border-radius: 50%;
+    width: 78px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  & .user-name {
+    padding: 5px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    word-wrap: break-word;
+    /* identical to box height */
+    text-align: center;
+
+    color: #959595;
+  }
+
+  & .rating {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    margin: 0 auto 0 auto;
+  }
+
+  & .user-comment {
+    margin-top: 15px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 27px;
+    text-align: center;
+    word-wrap: break-word;
+    color: #000000;
+    padding: 0 20px 0 20px;
+  }
+}

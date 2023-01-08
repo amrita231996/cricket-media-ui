@@ -1,44 +1,19 @@
 // import profileAvatar from "../../assets/images/header/Ellipse_73@2x.png";
 // import editIcon from "../../assets/images/profile/edit_icon.svg";
 import editIcon from "../../assets/images/icons/edit.svg";
-import Followings from "../followers/followers";
-import StateDropDown from "../state-dropdown/stateDropDown";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import {
-  TextField,
-  Input,
-  Typography,
-  Button,
-  Fade,
-  Modal,
-  Box,
-  Backdrop,
   Grid,
-  Paper,
 } from "@mui/material";
-import Masonry from "@mui/lab/Masonry";
 import axios from "axios";
 import { useEffect, useState, useCallback } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./index.scss";
-import UploadBtn from "../upload-button/uploadBtn";
-import validator from "validator";
 import defaultAvatar from "../../assets/images/profile/default_avatar.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
-import LoadingButton from "../loading-button/LoadingButton";
 import { useRef } from "react";
-import Posts from "../posts";
-import useScroller from "../../commons/useScroller.js";
-import { BallTriangle } from "react-loader-spinner";
 import FollowerPanel from "./get-follower";
 import FollowingPanel from "./get-following";
-import BGImage from "../../assets/images/profile/bg.jpg";
 import Run from "../posts/run";
-import SubmenuInLine from "../submenu_inline/index";
-import Post from "../posts/post";
-import UserCard from "../followers/followers";
 import ProfileList from "../../commons/components/ProfileList";
 import { clearStorage, getStorageItem } from "../../utils/sessionStorage";
 import ImageModal from "../../commons/components/image-modal";
@@ -490,14 +465,6 @@ const Profile = (props) => {
           </Grid>
         </Grid>
 
-      </Grid>
-
-      <Grid container className="profile_submenu" sx={{ pt: "20px" }}>
-        <SubmenuInLine
-          subMenus={subMenus}
-          onSubmenuChange={handleSubmenuChange}
-          selectedSubmenu={selectedSubmenu}
-        />
       </Grid>
 
       <Grid container sx={{ pt: "20px" }}>

@@ -1,0 +1,19 @@
+.profile-main {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: auto;
+    margin-top: 40px;
+    padding-bottom: 100px;
+}
+
+.activation-text {
+    color:  white;
+    font-size:  50px;
+    text-align: center;
+
+}
+.page.activate-user {
+  background-color: #131639;
+  min-height: 100vh;
+}

@@ -68,7 +68,7 @@ export default function Report(props) {
             component="h2"
             sx={{}}
           >
-            Report Feed
+            Report Pitch
           </Typography>
 
           <RadioBtn>
