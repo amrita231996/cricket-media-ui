@@ -1,0 +1,39 @@
+@media screen and (min-width: 769px) {
+    .feeds {
+        flex-basis: 70%;
+    
+        & .tabs {
+            margin-top: 25px;
+    
+            & .react-tabs__tab {
+                color: #cfcfcf;
+                margin-right: 10px;
+            }
+            & .react-tabs__tab--selected {
+                background-color: transparent;
+                border: none;
+                border-bottom: 2px solid #FE560E;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .feeds {
+        flex-basis: 100%;
+    
+        & .tabs {
+            margin-top: 25px;
+    
+            & .react-tabs__tab {
+                color: #cfcfcf;
+                margin-right: 10px;
+            }
+            & .react-tabs__tab--selected {
+                background-color: transparent;
+                border: none;
+                border-bottom: 2px solid #FE560E;
+            }
+        }
+    }
+}

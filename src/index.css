@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  font-family: "Poppins", sans-serif;
+  /* background-color: black; */
+  background-color: #e5e5e5 !important;
+}
+
+.primary {
+  font-family: 'Poppins';
+  font-size: 14px;
+  color: #FFFFFF;
+  font-weight: 300;
+}

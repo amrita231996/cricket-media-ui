@@ -1,0 +1,215 @@
+.hashtag-link {
+  font-weight: 500 !important;
+  color: #00298e !important;
+  text-decoration: none !important;
+}
+
+.post-cover {
+  display: flex;
+  gap: 15px;
+  padding: 10px 12px;
+}
+
+.image-cover {
+  position: relative;
+  margin-top: 4px;
+}
+
+.text-cover {
+  flex: 1;
+  max-width: calc(100% - 75px);
+  flex-wrap: wrap;
+}
+
+.post-content {
+  width: 100%;
+  margin: 5px 0;
+  padding: 15px 12px;
+  box-sizing: border-box;
+  resize: none;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+.post-modal-bottom-panel {
+  border-top: 1px solid #f1f1f5;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+
+  & .icon-btn-block {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    // gap: 10px;
+  }
+  & .gallery-icon {
+    height: 24px;
+    display: flex;
+    justify-content: flex-start;
+    // margin-left: auto;
+    cursor: pointer;
+  }
+  & .submit-btn {
+    margin-left: auto;
+  }
+}
+
+.attch {
+  max-width: 100%;
+  max-height: 100%;
+  //   width: 100%;
+}
+
+.text-cover {
+  flex: 1;
+}
+
+@media screen and (min-width: 769px) {
+  .post-cover {
+    padding: 8px;
+  }
+
+  .attachment-content {
+    margin-bottom: 10px;
+    & img {
+      max-width: 100%;
+      max-height: 400px;
+      display: block; /* remove extra space below image */
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.suggestions1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 360px;
+  gap: 20px;
+
+  .suggestions1__image {
+    height: 30px;
+    width: 30px;
+    max-width: 30px;
+    border-radius: 50%;
+    position: relative;
+    // flex: 1;/
+    img {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .follower__mark,
+    .following__mark,
+    .mutual__mark {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: #0c5ba0;
+      top: -2px;
+      right: -3px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+
+    .follower__mark {
+      background-color: orange;
+    }
+  }
+
+  .suggestions1__fullname {
+    flex: 1;
+    min-width: 50%;
+    h2 {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 20px;
+      color: #1a1919;
+      text-align: left;
+    }
+  }
+
+  .suggestions1__followers,
+  .suggestions1__runs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100px;
+
+    p {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      color: #0c5ba0;
+    }
+  }
+}
+
+.mentioned,
+.hashtagged {
+  text-decoration: none;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #0c5ba0;
+}
+
+@media screen and (max-width: 769px) {
+  .post-cover {
+    padding: 8px;
+  }
+  .image-cover {
+    display: block;
+  }
+  .text-cover {
+    width: 100%;
+  }
+  .attachment-content {
+    margin-bottom: 10px;
+    & img {
+      max-width: 100%;
+      max-height: 300px;
+      // width: 100%;
+      // max-height: 400px;
+      display: block; /* remove extra space below image */
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .suggestions1 {
+    width: 90vw;
+    padding: 0px 20px;
+    position: relative;
+    left: 5%;
+    gap: 15px;
+
+    .suggestions1__fullname {
+      flex: 1;
+      min-width: 40%;
+      h2 {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+        color: #1a1919;
+        text-align: left;
+      }
+    }
+  }
+}

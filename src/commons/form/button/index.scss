@@ -1,0 +1,45 @@
+.form-element.button {
+    position: relative;
+
+    & input[type="file"] {
+        display: none;
+    }
+
+    & button {
+
+        font-family: inherit;
+        width: 100%;
+        padding: 6px;
+        border-radius: 15px;
+        border: none;
+        color: #CFCFCF;
+        cursor: pointer;
+
+
+        &:disabled {
+            cursor: not-allowed;
+        }
+
+        &.primary-button {
+            background-color: black;
+            border: 1px solid black;
+        }
+
+        &.secondary-button {
+            background-color: transparent;
+            border: 1px solid #CFCFCF;
+        }
+        &.tertiary-button {
+            color: #ffffff;
+            background-color: #747452;
+        }
+    }
+    
+    & .button-icon {
+        position: absolute;
+        top: 5px;
+        left: 25px;
+        height: 15px;
+        width: 15px;
+    }
+}

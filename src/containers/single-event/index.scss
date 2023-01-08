@@ -1,0 +1,75 @@
+.main-wrapper {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.event-image {
+  height: 40vh;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.event-title {
+  font-size: 2rem !important;
+  margin: 50px 0px 20px 0px !important;
+  font-weight: 600 !important;
+  font-family: "Poppins" !important;
+}
+
+
+.event-location {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin: 15px 0px !important;
+}
+.event-date,.event-time,.event-fees {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin: 15px 0px !important;
+}
+
+.event-fees {
+  margin: 20px 0px !important;
+  font-size: 20px;
+}
+
+.hr-single {
+  margin: 20px 0px !important;
+}
+
+.single-footer {
+  margin: 20px 0px 10px 0px;
+}
+
+.tshirt-svg {
+  display: block !important;
+  margin: auto !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .event-title {
+    font-size: 1.5rem !important;
+    margin: 20px 0px 5px 0px !important;
+    font-weight: 600 !important;
+    font-family: "Poppins" !important;
+  }
+  .event-image {
+    height: 20vh;
+    width: 100%;
+    object-fit: cover;
+  }
+  .event-location {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    margin: 10px 0px !important;
+  }
+  .event-date,.event-time,.event-fees {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    margin: 10px 0px !important;
+  }
+  .event-description-wrapper {
+    width: 50%;
+  }
+}

@@ -1,0 +1,133 @@
+.share-post-content {
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px 12px;
+  box-sizing: border-box;
+  resize: none;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+.post-modal-bottom-panel {
+  border-top: 1px solid #f1f1f5;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+
+  & .icon-btn-block {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    // gap: 10px;
+  }
+  & .gallery-icon {
+    height: 24px;
+    display: flex;
+    justify-content: flex-start;
+    // margin-left: auto;
+    cursor: pointer;
+  }
+  & .submit-btn {
+    margin-left: auto;
+  }
+}
+
+.attch {
+  max-width: 100%;
+  max-height: 100%;
+  //   width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+  .share-attachment-content {
+    margin-bottom: 10px;
+    & img {
+      max-width: 100%;
+      max-height: 300px;
+      // width: 100%;
+      // max-height: 400px;
+      display: block; /* remove extra space below image */
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .share-attachment-content {
+    margin-bottom: 10px;
+    & img {
+      max-width: 100%;
+      max-height: 300px;
+      // width: 100%;
+      // max-height: 400px;
+      display: block; /* remove extra space below image */
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.post {
+  width: 100%;
+  margin: 5px 0;
+  // padding: 5px 12px;
+  box-sizing: border-box;
+  resize: none;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  background-color: #e5e5e5;
+  padding: 20px;
+
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    // margin-bottom: 15px;
+
+    & .left {
+      display: flex;
+      align-items: center;
+
+      & p {
+        margin: 0;
+      }
+      & .avatar-image {
+        height: 54px;
+        border-radius: 50%;
+        margin-right: 15px;
+        width: 54px;
+      }
+      & .shared-link {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+
+        /* identical to box height */
+        letter-spacing: 0.1px;
+
+        color: #1a1919;
+      }
+      & .date-time {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+
+        /* identical to box height */
+
+        color: #979797;
+      }
+    }
+  }
+}
+.post-text {
+  padding: 5px 12px 5px 12px;
+  white-space: pre-line;
+
+}

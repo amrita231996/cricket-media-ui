@@ -1,0 +1,46 @@
+.edit_bg_color {
+  background: #E5E5E5;
+  & .profile_header_section{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.1px;
+    color: #1A1919;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 115px;
+  }
+  & .edit_main_bg_color {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 5%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  & .profile_avatar_section{
+    position: absolute;
+    left: 42.39%;
+    right: 42.97%;
+    top: 17.19%;
+    bottom: 63.28%;
+  }
+
+  & .profile_img {
+    width: 150px;
+    height: 150px;
+    border-radius: 104px;
+    // position: absolute;
+    // top: -31%;
+    left: 2%;
+  }
+  & .profile_btn_save{
+    background: #00298E;
+    border-radius: 8px;
+  }
+  & .profile_btn_section{
+    padding-top: 30px;
+    padding-bottom: 100px;
+  }
+}

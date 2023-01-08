@@ -1,0 +1,52 @@
+.comment-wrapper {
+  margin-bottom: 16px !important;
+}
+
+.comment-text {
+  font-family: Poppins;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: justify;
+}
+
+.comment-name {
+  color: #1a1919;
+  font-weight: 600;
+  font-family: Inter;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.comment-time {
+  font-size: 12px;
+  font-weight: 100;
+  color: #979797;
+  font-family: Poppins;
+  line-height: 18px;
+}
+
+.comment-image-wrapper {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+}
+
+.comment-image {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+}
+
+.comments-user-icon {
+  width: 54px;
+  height: 54px;
+}
+
+.read-more {
+  font-family: Poppins;
+  font-size: 14px;
+  line-height: 24px;
+  color: #e95182;
+  font-weight: 400;
+  cursor: pointer;
+}

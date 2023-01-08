@@ -1,0 +1,53 @@
+@media screen and (min-width: 769px) {
+  .page.suggestion {
+    background-color: #e5e5e5;
+    min-height: 100vh;
+
+    .tabs {
+      & .react-tabs__tab {
+        color: #cfcfcf;
+        margin-right: 10px;
+      }
+      & .react-tabs__tab--selected {
+        background-color: transparent;
+        border: none;
+        // border-bottom: 2px solid #fe560e;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .page.suggestion {
+    background-color: #e5e5e5;
+    min-height: 100vh;
+
+    .tabs {
+      & .react-tabs__tab {
+        color: #cfcfcf;
+        margin-right: 10px;
+      }
+      & .react-tabs__tab--selected {
+        background-color: transparent;
+        border: none;
+        // border-bottom: 2px solid #fe560e;
+      }
+    }
+  }
+}
+
+.suggestions-main {
+  display: flex;
+  max-width: 70%;
+  margin: auto;
+  margin-top: 15px;
+  padding-bottom: 100px;
+  position: relative;
+  padding-top: -200px;
+
+  background-position: 0px -100px;
+
+  @media screen and (max-width: 769px) {
+    max-width: 90%;
+  }
+}

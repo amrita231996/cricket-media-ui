@@ -1,0 +1,54 @@
+@media screen and (min-width: 769px) {
+  .run-section {
+    padding: 8px !important;
+    cursor: default;
+
+    & .runs-stats {
+      background: linear-gradient(180deg, #e53c96 0%, #fecc08 100%);
+      border-radius: 4px;
+      color: white;
+      padding: 4px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      display: flex;
+      flex-direction: row;
+      /* identical to box height */
+      text-align: center;
+      text-transform: capitalize;
+
+      & div {
+        padding: 0 5px 0 5px;
+        margin: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .run-section {
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    cursor: default;
+    & .runs-stats {
+      background: linear-gradient(180deg, #e53c96 0%, #fecc08 100%);
+      border-radius: 4px;
+      color: white;
+      padding: 4px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      display: flex;
+      flex-direction: row;
+      /* identical to box height */
+      text-align: center;
+      text-transform: capitalize;
+
+      & div {
+        padding: 0 5px 0 5px;
+        margin: auto;
+      }
+    }
+  }
+}

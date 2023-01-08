@@ -1,0 +1,11 @@
+.landingPageSignUp{
+    text-align: center;
+    height: 490px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    // margin: 2em auto !important;
+    padding: 2em;
+    @media screen  and (max-width: 900px) {
+        height: unset;
+    } 
+}

@@ -1,0 +1,13 @@
+<svg id="Component_3_7" data-name="Component 3 – 7" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Base" fill="none" stroke="#49528f" stroke-width="1">
+    <rect width="50" height="50" rx="10" stroke="none"/>
+    <rect x="0.5" y="0.5" width="49" height="49" rx="9.5" fill="none"/>
+  </g>
+  <g id="Group_9894" data-name="Group 9894" transform="translate(-1469.973 -15)">
+    <g id="Group_9807" data-name="Group 9807">
+      <path id="Op_component_1" data-name="Op component 1" d="M1666,49h-16.028a1.006,1.006,0,0,1-.958-.73,1.048,1.048,0,0,1,.4-1.158c.008-.006,2.23-1.746,2.23-7.508a6.35,6.35,0,1,1,12.689,0c0,5.763,2.222,7.5,2.244,7.519a1.062,1.062,0,0,1,.37,1.159A1,1,0,0,1,1666,49Z" transform="translate(-164)" fill="#8387ff"/>
+      <path id="Op_component_2" data-name="Op component 2" d="M1657.98,53a3.639,3.639,0,0,1-1.655-.395,3.117,3.117,0,0,1-1.2-1.054.963.963,0,0,1,.441-1.408,1.287,1.287,0,0,1,1.62.384.878.878,0,0,0,.336.3,1.032,1.032,0,0,0,.689.083.919.919,0,0,0,.568-.382,1.287,1.287,0,0,1,1.621-.381.963.963,0,0,1,.438,1.409,3.262,3.262,0,0,1-2.019,1.349A3.793,3.793,0,0,1,1657.98,53Z" transform="translate(-164)" fill="#8387ff"/>
+    </g>
+    <circle id="Alert_Detail" data-name="Alert Detail" cx="5" cy="5" r="5" transform="translate(1494 28)" fill="#ff614c" stroke="#fff" stroke-width="1"/>
+  </g>
+</svg>

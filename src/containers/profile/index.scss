@@ -1,0 +1,58 @@
+
+
+.page.profile {
+  background-color: #E5E5E5;
+  min-height: 100vh;
+}
+@media screen and (min-width: 769px) {
+  .profile-main-page {
+    display: flex;
+    max-width: 70%;
+    margin: auto;
+    margin-top: 15px;
+    padding-bottom: 100px;
+  }
+
+  .bg {
+    background-image: url("../../assets/images/profile/bg.jpg");
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}
+
+
+@media screen and (max-width: 769px) {
+  .bg {
+    background-image: url("../../assets/images/profile/bg.jpg");
+    height: 15vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .profile-main-page {
+    display: flex;
+    max-width: 99%;
+    margin: auto;
+    margin-top: 0;
+    padding-bottom: 100px;
+  }
+  
+  .page.profile {
+    background-color: #131639;
+    min-height: 100vh;
+  }
+  
+
+}
+.side-panel {
+  width: 40%;
+  margin-left: auto;
+  padding-left: 20px;
+
+  @media screen and (max-width: 769px) {
+    display: none;
+  }
+}

@@ -1,0 +1,335 @@
+@media only screen and (min-width: 600px) {
+
+  .profile_content_container {
+    padding-left: 5%;
+  }
+
+  .profile_detail {
+    width: 75% !important;
+    height: 149px;
+
+    background: #ffffff;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: -5%;
+    max-width: 1024px;
+
+    & .avatar_container {
+      margin-top: -5%;
+      padding-left: 3%;
+
+      & .profile_img {
+        position: relative;
+        border-radius: 50%;
+        width: 173px;
+        height: 173px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    & .profile_name_container {
+      display: flex;
+      margin: auto 0;
+      gap: 10px;
+    }
+
+    & .profile_name {
+      left: 4%;
+
+      top: calc(50% - 21px - 40px);
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 28px;
+      color: #1a1919;
+    }
+
+    & .follow_container {
+      display: flex;
+      justify-content: center;
+
+      & .follow_btn {
+        left: 42%;
+        right: 50%;
+        top: calc(50% - 21px - 28px);
+        background: rgba(254, 204, 8, 0.2);
+        border: 1px solid #fecc08;
+        border-radius: 4px;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        padding: 4px;
+
+        text-align: center;
+        text-transform: capitalize;
+
+        color: #00298e;
+        cursor: pointer;
+        margin: auto;
+      }
+    }
+
+    & .profile_label {
+      padding-top: 10px;
+
+      & .profile_lable_text {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        letter-spacing: 0.2px;
+        color: #979797;
+        cursor: pointer;
+        border-bottom: 1px solid #979797;
+      }
+      & .profile_lable_number {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0.1px;
+        color: #00298e;
+        padding-left: 5px;
+        cursor: pointer;
+      }
+    }
+
+    & .total_run {
+      margin-left: auto;
+    }
+
+    & .total_run_mobile {
+      display: none;
+    }
+
+    & .h_line {
+      left: 17.65%;
+      right: 2.57%;
+      top: 53.11%;
+      bottom: 45.79%;
+      background: #f1f1f5;
+    }
+
+    & .profile_about_us {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px !important;
+      line-height: 18px;
+      letter-spacing: -0.08px;
+      color: #1a1919;
+      height: 36px;
+      left: 17.65%;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: -0.08px;
+      color: #1a1919;
+      top: 62%;
+      padding-right: 25px;
+    }
+    .edit-btn {
+      position: absolute;
+      left: 139px;
+      bottom: 126px;
+      background: white;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+
+      & img {
+        padding: 5px;
+        width: 25px;
+      }
+    }
+  }
+
+   .about_me {
+    background-color: white;
+    max-width: 75% !important;
+    margin: auto !important;
+    padding: 1%;
+    border-radius: 10px;
+    min-height: 10vw;
+    word-wrap: break-word;
+  }
+
+  .profile_submenu {
+    max-width: 38vw;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .profile_detail {
+    width: 90% !important;
+    height: 100% !important;
+
+    background: #ffffff;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: -5%;
+    max-width: 1024px;
+
+    & .avatar_container {
+      margin-top: -10%;
+      // padding-left: 3%;
+
+      & .profile_img {
+        position: relative;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: auto;
+      }
+    }
+
+    & .profile_name_container {
+      display: flex;
+      margin: auto 0;
+      flex-direction: column;
+    }
+
+    & .profile_name {
+      left: 4%;
+
+      top: calc(50% - 21px - 40px);
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      color: #1a1919;
+      margin: auto;
+      word-wrap: break-word;
+    }
+    & .follow_btn {
+      background: rgba(254, 204, 8, 0.2);
+      border: 1px solid #fecc08;
+      border-radius: 4px;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      padding: 4px;
+
+      text-align: center;
+      text-transform: capitalize;
+
+      color: #00298e;
+      cursor: pointer;
+      max-width: 50%;
+    }
+    & .profile_label {
+      padding-top: 10px;
+      & .profile_lable_text {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        letter-spacing: 0.2px;
+        color: #979797;
+        border-bottom: 1px solid #979797;
+      }
+      & .profile_lable_number {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0.1px;
+        color: #00298e;
+        padding-left: 5px;
+      }
+    }
+
+    & .follow_container {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    & .total_run {
+      display: none;
+    }
+    
+    & .profile_stats {
+        justify-content: space-around;
+    }
+
+    & .h_line {
+      left: 17.65%;
+      right: 2.57%;
+      top: 53.11%;
+      bottom: 45.79%;
+      background: #f1f1f5;
+    }
+    & .profile_about_us {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px !important;
+      line-height: 18px;
+      letter-spacing: -0.08px;
+      color: #1a1919;
+      height: 36px;
+      left: 17.65%;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: -0.08px;
+      color: #1a1919;
+      top: 62%;
+      padding-right: 25px;
+      padding-left: 6%;
+    }
+  }
+
+  .edit-btn {
+    position: absolute;
+    left: 74px;
+    bottom: 67px;
+    background: white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    & img {
+      padding: 5px;
+      width: 25px;
+    }
+  }
+
+  .profile_submenu {
+    max-width: 70vw;
+    margin: auto;
+  }
+
+  .about_me {
+    background-color: white;
+    width: 90% !important;
+    margin: auto !important;
+    padding: 3%;
+    border-radius: 10px;
+    min-height: 20vw;
+    word-wrap: break-word;
+  }
+}

@@ -1,0 +1,53 @@
+.submit-form-element.button {
+  position: relative;
+  & input[type="file"] {
+    display: none;
+  }
+
+  & button {
+    background-color: #fecc08;
+    width: 100px;
+    height: 36px;
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+
+    /* identical to box height */
+    text-align: center;
+    text-transform: capitalize;
+
+    color: #00247b;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &.primary-button {
+      background-color: black;
+      border: 1px solid black;
+    }
+
+    &.secondary-button {
+      background-color: transparent;
+      border: 1px solid #cfcfcf;
+    }
+    &.tertiary-button {
+      color: #ffffff;
+      background-color: #fecc08;
+    }
+  }
+
+  & .button-icon {
+    position: absolute;
+    top: 5px;
+    left: 25px;
+    height: 15px;
+    width: 15px;
+  }
+}

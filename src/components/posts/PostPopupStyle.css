@@ -1,0 +1,291 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.icon-close:hover {
+  color: #1a1919;
+}
+
+.image-box {
+  height: 100%;
+  flex: 1;
+  background-color: #1a1919;
+  border-radius: 12px 0px 0px 12px;
+}
+
+.post-img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.post-video {
+  object-fit: contain;
+  display: block; /* remove extra space below image */
+  height: auto;
+  width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.content-box {
+  flex: 1;
+  height: 100%;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.container-content {
+  border-bottom: 1px solid #f1f1f5;
+}
+
+.close-wrapper {
+  text-align: right;
+}
+
+.icon-close {
+  height: 25px;
+  font-weight: 300;
+  font-size: 18px;
+  color: #92929d;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+
+.icon-close:hover {
+  color: #1a1919;
+}
+
+.header-wrapper {
+  flex: 2;
+}
+
+.post-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.username-link {
+  color: #1a1919;
+  font-weight: 600;
+  font-family: "Inter";
+  font-size: 16px;
+}
+
+.pitch-date-time {
+  font-size: 12px;
+  font-weight: 100;
+  color: #979797;
+  font-family: "Poppins";
+  line-height: 18px;
+}
+
+#composition-button:hover {
+  background-color: transparent;
+}
+
+.post-description {
+  font-family: "Poppins";
+  font-size: 14px;
+  line-height: 24px;
+  margin: 10px 0px 5px 0px;
+}
+
+.post-description p {
+  margin-bottom: 10px;
+}
+
+.comments-box,
+.share-box {
+  display: flex;
+  align-items: center;
+}
+
+.comments-stats,
+.share-stats {
+  margin-left: 5px;
+}
+
+.all-comments {
+  flex: 3;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  padding: 0px 10px 0px 0px;
+}
+
+.all-comments::-webkit-scrollbar {
+  display: none;
+}
+
+.footer-wrapper {
+  width: 100%;
+  height: 50px;
+  padding: 0px 0px;
+  display: flex;
+  position: relative;
+  gap: 10px;
+  align-items: center;
+}
+
+.text-section {
+  flex: 1;
+}
+
+.textarea-box {
+  width: 100%;
+  max-width: 42vw;
+  /* overflow-x: scroll; */
+  height: 100%;
+  border: 1px solid #f1f1f5;
+  padding: 10px 20px 10px 5px;
+  outline: none;
+}
+
+.textarea-box {
+  font-family: "Poppins";
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.textarea-box::placeholder {
+  font-family: "Poppins";
+  line-height: 24px;
+}
+
+.icon-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.emoji-icon {
+  height: 20px;
+  width: 20px;
+  color: #718193;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+
+.emoji-picker {
+  position: absolute;
+  bottom: 50px;
+  right: 40px;
+}
+
+#composition-button {
+  padding-left: 10px;
+}
+
+.comment-ball-runs {
+  position: relative;
+  left: 8px;
+}
+
+@media only screen and (max-width: 900px) {
+
+  .textarea-box {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .comment-ball-runs {
+    left: 0px;
+    top: 8px;
+  }
+
+  #composition-button {
+    padding-left: 0px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .close-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+  }
+
+  .icon-close {
+    height: 15px;
+  }
+
+  .image-box {
+    border-radius: 0px;
+    height: 30vh;
+    width: 100%;
+  }
+
+  .post-video {
+    object-fit: contain;
+    display: block; /* remove extra space below image */
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .content-box {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .post-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .share-modal {
+    display: none;
+  }
+
+  .all-comments {
+    flex: 3;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    padding: 20px 10px 0px 0px;
+    order: 4;
+  }
+
+  .emoji-picker {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 300px;
+  }
+}

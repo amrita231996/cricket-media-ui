@@ -1,0 +1,25 @@
+// @import './assets/sass/typography.scss';
+
+body {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    font-family: 'Poppins', sans-serif;
+    
+    --primary-color: #00237C;
+    --secondary-color: #06A6B7;
+    --background-color: #EBF9FC;
+    --background-color2: #97E3FD;
+
+    // font-family: $primary-font, $fallback-font;
+    font-feature-settings: 'ss08' on;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  

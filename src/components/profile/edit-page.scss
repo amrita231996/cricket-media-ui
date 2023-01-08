@@ -1,0 +1,105 @@
+@media only screen and (min-width: 769px) {
+  .edit_bg_color {
+    background: #e5e5e5;
+    flex-direction: column !important;
+    & .profile_header_section {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: 0.1px;
+      color: #1a1919;
+      padding-left: 20px;
+      padding-top: 20px;
+      padding-bottom: 115px;
+    }
+
+    & .profile_img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+    & .profile_btn_save {
+      background: #00298e;
+      border-radius: 8px;
+    }
+  }
+
+  .edit-form {
+    background-color: white;
+    max-width: 70% !important;
+    border-radius: 12px;
+    margin: auto !important;
+  }
+
+  .form-content-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-pic {
+    display: flex;
+    justify-content: center;
+    margin-top: -5% !important;
+  }
+
+  .btn-container {
+    margin-left: auto !important;
+    margin-right: 15% !important;
+    margin-top: 2% !important;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .edit_bg_color {
+    background: #e5e5e5;
+    flex-direction: column !important;
+    & .profile_header_section {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: 0.1px;
+      color: #1a1919;
+      padding-left: 20px;
+      padding-top: 20px;
+      padding-bottom: 115px;
+    }
+
+    & .profile_img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+    & .profile_btn_save {
+      background: #00298e;
+      border-radius: 8px;
+    }
+  }
+
+  .edit-form {
+    background-color: white;
+    max-width: 90% !important;
+    border-radius: 12px;
+    margin: auto !important;
+  }
+
+  .form-content-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-pic {
+    display: flex;
+    justify-content: center;
+    margin-top: -5% !important;
+  }
+
+  .btn-container {
+    margin-left: auto !important;
+    margin-right: 15% !important;
+    margin-top: 2% !important;
+  }
+}

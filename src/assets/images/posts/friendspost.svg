@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="449" height="740" viewBox="0 0 449 740">
+  <g id="Group_9862" data-name="Group 9862" transform="translate(-337)">
+    <g id="Group_9858" data-name="Group 9858" transform="translate(-0.5 -0.25)">
+      <line id="Line_153" data-name="Line 153" x2="36" transform="translate(337.5 18.5)" fill="none" stroke="#fff" stroke-width="4"/>
+      <line id="Line_154" data-name="Line 154" x2="24" transform="translate(349 29)" fill="none" stroke="#fff" stroke-width="4"/>
+      <line id="Line_155" data-name="Line 155" x2="17" transform="translate(356 39)" fill="none" stroke="#fff" stroke-width="4"/>
+    </g>
+    <rect id="Rectangle_17661" data-name="Rectangle 17661" width="393" height="740" transform="translate(393)" fill="#fff"/>
+    <g id="Group_9861" data-name="Group 9861" transform="translate(385.5)">
+      <line id="Line_153-2" data-name="Line 153" y1="28" x2="30.5" transform="translate(343 18.5)" fill="none" stroke="#131639" stroke-width="4"/>
+      <line id="Line_156" data-name="Line 156" x1="30" y1="28" transform="translate(343 18.5)" fill="none" stroke="#131639" stroke-width="4"/>
+    </g>
+    <text id="News" transform="translate(557 223)" fill="#131639" font-size="25" font-family="Poppins-Light, Poppins" font-weight="300"><tspan x="0" y="0">News</tspan></text>
+    <text id="Deals" transform="translate(556 305)" fill="#131639" font-size="25" font-family="Poppins-Light, Poppins" font-weight="300"><tspan x="0" y="0">Deals</tspan></text>
+    <text id="I_Support" data-name="I Support" transform="translate(535 386)" fill="#131639" font-size="25" font-family="Poppins-Light, Poppins" font-weight="300"><tspan x="0" y="0">I Support</tspan></text>
+    <text id="About_us" data-name="About us" transform="translate(536 468)" fill="#131639" font-size="25" font-family="Poppins-Light, Poppins" font-weight="300"><tspan x="0" y="0">About us</tspan></text>
+    <text id="Pitch" transform="translate(559 141)" fill="#131639" font-size="25" font-family="Poppins-SemiBold, Poppins" font-weight="600"><tspan x="0" y="0">Pitch</tspan></text>
+    <line id="Line_157" data-name="Line 157" x2="63" transform="translate(560 151)" fill="none" stroke="#ffd73b" stroke-linecap="round" stroke-width="4"/>
+  </g>
+</svg>

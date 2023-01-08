@@ -1,0 +1,136 @@
+.suggestions {
+
+    flex-grow: 1;
+    margin-left: 15px;
+
+    @media screen and (max-width: 769px) {
+        display: none;
+    }
+
+    & .suggest-heading {
+        color: #cfcfcf;
+        margin: 0;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid;
+        display: flex;
+        justify-content: space-between;
+        
+        & p {
+            margin: 0;
+        }
+
+        & .invite {
+            background-image: linear-gradient(45DEG, #ffea9a, #edc2ff);
+            position: relative;
+            padding-right: 55px;
+            border-radius: 10px;
+
+            & img {
+                position: absolute;
+                right: 10px;
+                top: 5px;
+            }
+            & .invite-button {
+                cursor: pointer;
+                border: none;
+                background-color: transparent;
+                border-radius: 10px;
+                color: #131639;
+                font-family: inherit;
+                padding: 5px;
+            }
+        }
+    }
+
+    & .suggestion.hidden {
+        display: none;
+    }
+    
+    & .suggestion.visible {
+        height: unset;
+    }
+    
+    & .suggestion {
+        background-color: #383B5A;
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        & .avatar {
+            border-radius: 50%;
+            height: 45px;
+            width:45px;
+        }
+        & .left-block {
+            max-width: 75px;
+        }
+
+        & .button-block {
+            & .follow {
+                background-color: transparent;
+                border: 1px solid;
+                margin-top: 18px;
+            }
+            & .message {
+                background-color: #00062C;
+                border: 1px solid;
+                color: #ffffff;
+                margin-top: 28px;
+            }
+        }
+
+        & .profile-info {
+
+            display: flex;
+            align-items: flex-start;
+            
+            & .name {
+                margin-top: 0;
+                margin-left: 5px;
+                display: flex;
+                flex-direction: column;
+                & .role {
+                    font-weight: 100;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        & .stats-block {
+
+            display: flex;
+            justify-content: center;
+
+            & .stat {
+                background-color: white;
+                border-radius: 50%;
+                width: 45px;
+                height: 45px;
+                position: relative;
+                &:first-child {
+                    margin-right: 25px;
+                }
+
+                & .number {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate3d(-50%,-50%,0);
+                }
+
+                & .label {
+                    position: absolute;
+                    bottom: -35px;
+                    font-size: 12px;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+}
