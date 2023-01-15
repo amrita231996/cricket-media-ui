@@ -16,7 +16,7 @@ const SearchPage = () => {
     return (
         <div>
             <Helmet>
-                <title>Champhunt | Search</title>
+                <title>Cricket Media | Search</title>
             </Helmet>
        
 

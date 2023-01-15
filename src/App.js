@@ -4,10 +4,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import {createSocket} from "./client-socket";
 import AppRoutes from './routes/AppRoutes';
 
-createSocket();
 
 const theme = createTheme({
   typography: {

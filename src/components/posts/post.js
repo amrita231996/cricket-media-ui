@@ -28,17 +28,13 @@ const Post = (props) => {
   const [showRuns, setShowRuns] = useState(false);
   const [sharing, setSharing] = useState(false);
   const avatar = getStorageItem("avatar");
-  const [ownPost, setOwnPost] = useState(false);
-  const [runsGiven, setRunsGiven] = useState(false);
+  // const [ownPost, setOwnPost] = useState(false);
   const [newSharedDetail, setNewSharedDetail] = useState([]);
   var regex = /(http[s]?:\/\/.*\.(?:png|jpg|gif|svg|jpeg|webp))/i;
   const navigate = useNavigate();
   const [sharedBody, setSharedBody] = useState("");
   const [comment, setComment] = useState("");
   const [showComments, setShowComments] = useState(false);
-  const [runsScored, setRunsScored] = useState();
-  const [runsGivenValue, setRunsGivenValue] = useState(0);
-  const [runsImage, setRunsImage] = useState(Runs);
   const [open, setOpen] = useState(false);
   const [isPostOpen, setIsPostOpen] = useState(false);
   const [popupData, setpopupData] = useState(false);
@@ -68,86 +64,8 @@ const Post = (props) => {
     setSharedBody(event.target.value);
   };
 
-  const getRunByUserIdAndFeedId = () => {
-    let options = {
-      method: "get",
-      url:
-        global.config.ROOTURL.prod +
-        `/feed/run/getRunByUserIdAndFeedId/${userId}/${postObj._id}`,
-      headers: {
-        Authorization: "Bearer " + accessToken,
-      },
-    };
-    axios(options)
-      .then((response) => {
-        console.log("response", response.data);
-        // setRunsGiven(response.data === 0 ? true  false);
-        setRunsGivenValue(response.data);
-      })
-      .catch((error) => {
-        console.log("error", error);
-      });
-  };
-
   const [comments, setComments] = useState();
 
-  const getUserMentions = async (str, callback) => {
-    if (!str) return;
-    const nameSearch = {
-      method: "POST",
-      url: global.config.ROOTURL.prod + "/auth/mention-name-search",
-      headers: {
-        Authorization: "Bearer " + accessToken,
-        "Content-Type": "application/json",
-      },
-      data: {
-        searchText: str,
-        pageNumber: 1,
-        pagePerSize: 5,
-      },
-    };
-    axios(nameSearch)
-      .then(({ data }) => {
-        return data.map((data) => {
-  //         let following = false;
-  //         let follower = false;
-  // const verifyFollowing = () => {
-  //           // data.followers.forEach((follower) => {
-  //           //   if (follower.followerUserId === userId) {
-  //           //     following = true;
-  //           //     return;
-  //           //   }
-  //           // });
-  //           if (data.youFollow?.length) {
-  //             following = true;
-  //           }
-  //         };
-  //         const verifyFollower = () => {
-  //           data.followers.forEach((following) => {
-  //             if (following.followingUserId === userId) {
-  //               follower = true;
-  //               return;
-  //             }
-  //           });
-  //         };
-  //         verifyFollowing();
-  //         // verifyFollower();
-          return {
-            id: data._id,
-            display: "@" + data.firstName + " " + data.lastName,
-            photo: data.profilePhoto,
-            email: data.email,
-            // followers: 450,
-            // runs: 13450,
-            followersCount: data.followersCount,
-            totalRun: data.totalRun,
-            following: data.youFollow,
-
-          };
-        });
-      })
-      .then(callback);
-  };
 
   const renderSuggestions = (entry) => {
     return (
@@ -216,53 +134,10 @@ const Post = (props) => {
           </svg>
           <p>{entry.followersCount}</p>
         </div>
-        {/* <div className="suggestions1__runs">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11.2727 2.71428L11.2727 2.71424C10.1304 1.57718 8.61323 0.95 7 0.95C5.37396 0.95 3.85413 1.57712 2.71436 2.71428L2.71432 2.71432C1.5771 3.85155 0.95 5.37399 0.95 7C0.95 8.61323 1.57718 10.1304 2.71424 11.2727L2.71428 11.2727C3.85657 12.4176 5.37898 13.05 7 13.05C8.6108 13.05 10.128 12.4176 11.2728 11.2728C12.4176 10.128 13.05 8.60821 13.05 7C13.05 5.37898 12.4176 3.85656 11.2727 2.71428ZM3.83299 11.5719L4.28181 11.1231L4.31716 11.0877L4.28181 11.0524L4.00826 10.7788L3.9729 10.7435L3.93755 10.7788L3.44318 11.2732C3.17702 11.0523 2.93243 10.8057 2.71144 10.5412L3.18761 10.065L3.22297 10.0297L3.18761 9.99432L2.91407 9.72077L2.87871 9.68542L2.84335 9.72077L2.41329 10.1508C2.35855 10.0714 2.30549 9.98943 2.25515 9.90588L9.90328 2.25776C9.98643 2.30805 10.0672 2.36118 10.1479 2.41621L9.91174 2.65239L9.87639 2.68774L9.91174 2.7231L10.1853 2.99665L10.2206 3.032L10.256 2.99665L10.5414 2.71127C10.8055 2.92973 11.0477 3.16977 11.2662 3.4314L10.9972 3.71666L10.9629 3.753L10.9992 3.78731L11.2805 4.05312L11.3169 4.0875L11.3512 4.05108L11.565 3.82435C11.6183 3.90005 11.6691 3.97724 11.7185 4.05596L4.05577 11.7187C3.97941 11.6714 3.90485 11.6229 3.83299 11.5719ZM1.4371 7C1.4371 3.93342 3.93342 1.4371 7 1.4371C7.88361 1.4371 8.7186 1.64295 9.46034 2.01218L2.01231 9.46021C1.64531 8.71838 1.4371 7.88343 1.4371 7ZM7 12.5629C6.101 12.5629 5.25054 12.3471 4.4981 11.9675L11.9676 4.49797C12.3495 5.25033 12.5629 6.10082 12.5629 7C12.5629 10.0666 10.0666 12.5629 7 12.5629Z"
-              fill="#718193"
-              stroke="#718193"
-              stroke-width="0.1"
-            />
-          </svg>
-          <p>{entry.totalRun}</p>
-        </div> */}
       </div>
     );
   };
 
-  const getHashtags = async (str, callback) => {
-    if (!str) return;
-    const nameSearch = {
-      method: "POST",
-      url: global.config.ROOTURL.prod + "/hash-profile-tag/searchHashTag",
-      headers: {
-        Authorization: "Bearer " + accessToken,
-        "Content-Type": "application/json",
-      },
-      data: {
-        searchText: str,
-        pageNumber: 1,
-        pagePerSize: 5,
-      },
-    };
-    axios(nameSearch)
-      .then(({ data }) => {
-        return data.map((data) => {
-          return {
-            id: data._id,
-            display: "#" + data.hashTagText,
-          };
-        });
-      })
-      .then(callback);
-  };
 
   const tagStyles = {
     // fontFamily: "Poppins",
@@ -314,25 +189,6 @@ const Post = (props) => {
   };
 
   useEffect(() => {
-    global.config.socketInstance.on("onFeedChange", async (updatedValue) => {
-      console.log("onFeedChange 2", updatedValue);
-      try {
-        if (updatedValue._id === postObj._id) {
-          setPostObj(updatedValue);
-          getRunByUserIdAndFeedId();
-        }
-      } catch (err) {
-        console.log("error on run change", err);
-      }
-    });
-  }, []);
-
-  useEffect(() => {
-    setOwnPost(userId === postObj.userId);
-    getRunByUserIdAndFeedId();
-  }, [popupData]);
-
-  useEffect(() => {
     if (postObj.sharedDetail !== undefined) {
       setNewSharedDetail(postObj.sharedDetail);
     }
@@ -361,7 +217,7 @@ const Post = (props) => {
         "Content-Type": "application/json",
       },
       data: {
-        FeedId: postObj._id,
+        feedId: postObj._id,
         commentText: comments,
       },
     };
@@ -405,15 +261,6 @@ const Post = (props) => {
       });
   };
 
-  useEffect(() => {
-    if (runsGivenValue === 2) {
-      setRunsImage(TwoRuns);
-    } else if (runsGivenValue === 4) {
-      setRunsImage(FourRuns);
-    } else if (runsGivenValue === 6) {
-      setRunsImage(SixRuns);
-    }
-  }, [runsGivenValue, runsGiven]);
 
   const URL_REGEX =
     /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gm;
@@ -714,78 +561,9 @@ const Post = (props) => {
             </div>
           </div>
         </div>
-
-        <div className="runs-hld hld">
-          <RunCard run={postObj?.postRunCount} />
-          <div>
-            {runsGivenValue === 0 && !ownPost && (
-              <ScoreRuns
-                type="post-menu"
-                setShowRuns={setShowRuns}
-                setRunsGiven={setRunsGiven}
-                setRunsScored={setRunsScored}
-                setRunsGivenValue={setRunsGivenValue}
-                ownPost={ownPost}
-                showRuns={showRuns}
-                postObj={postObj}
-              />
-            )}
-            {runsGivenValue !== 0 && !ownPost && (
-              <div className="">
-                <div
-                  style={{
-                    margin: "auto",
-                    display: "flex",
-                    textAlign: "center",
-                  }}
-                >
-                  <img
-                    src={runsImage}
-                    style={{ cursor: "not-allowed" }}
-                    alt="img"
-                  />
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
       </div>
       <div className={`comments-holder visible`}>
         <div className="post-comment">
-          <div className="text-block">
-            {/* <textarea
-              placeholder="Write a comment"
-              onChange={getCommentData}
-              value={comment}
-            ></textarea> */}
-            <MentionsInput
-              value={comments}
-              name="message"
-              placeholder="Start typing here"
-              id="postContent"
-              className="post-content"
-              onChange={(e) => {
-                setComments(e.target.value);
-              }}
-              style={MentionStyle}
-            >
-              <Mention
-                trigger="@"
-                renderSuggestion={renderSuggestions}
-                style={tagStyles}
-                appendSpaceOnAdd={true}
-                data={getUserMentions}
-                markup="<a class='mentioned' href='/profile/__id__'>__display__</a>"
-              />
-              <Mention
-                trigger="#"
-                style={tagStyles}
-                appendSpaceOnAdd={true}
-                data={getHashtags}
-                markup="<a class='hashtagged' href='/hashtags?id=__id__'>__display__</a>"
-              />
-            </MentionsInput>
-          </div>
           <div
             className="action-block"
             style={{ display: `${comments ? "" : "none"}` }}

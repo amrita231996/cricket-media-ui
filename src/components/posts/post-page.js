@@ -5,15 +5,9 @@ import CricketMediaButton from "../../commons/form/button";
 import ReactTimeAgo from "react-time-ago";
 import Comments from "../../assets/images/icons/comments.svg";
 import Share from "../../assets/images/icons/share.svg";
-import Runs from "../../assets/images/icons/post-action.png";
-import TwoRuns from "../../assets/images/icons/2run.png";
-import FourRuns from "../../assets/images/icons/4run.png";
-import SixRuns from "../../assets/images/icons/6run.png";
 import axios from "axios";
 import defaultAvatar from "../../assets/images/profile/default_avatar.png";
 import DropdownMenu from "./../dropdown-menu/dropdownMenu";
-import ScoreRuns from "../runs-dropdown/dropdownMenu";
-import RunCard from "./run";
 import NameCard from "./name-card";
 import ShareModal from "../../commons/components/share-modal/PostModal";
 import { clearStorage, getStorageItem } from "../../utils/sessionStorage";
@@ -24,20 +18,15 @@ const PostPage = (props) => {
   const accessToken = getStorageItem("token");
   const userId = getStorageItem("user_id");
   const [postObj, setPostObj] = useState(props.post);
-  const [showRuns, setShowRuns] = useState(false);
   const [sharing, setSharing] = useState(false);
   const avatar = getStorageItem("avatar");
   const [ownPost, setOwnPost] = useState(false);
-  const [runsGiven, setRunsGiven] = useState(false);
   const [newSharedDetail, setNewSharedDetail] = useState([]);
   var regex = /(http[s]?:\/\/.*\.(?:png|jpg|gif|svg|jpeg|webp))/i;
   const navigate = useNavigate();
   const [sharedBody, setSharedBody] = useState("");
   const [comment, setComment] = useState("");
   const [showComments, setShowComments] = useState(false);
-  const [runsScored, setRunsScored] = useState();
-  const [runsGivenValue, setRunsGivenValue] = useState(0);
-  const [runsImage, setRunsImage] = useState(Runs);
   const [open, setOpen] = useState(false);
   const [isPostOpen, setIsPostOpen] = useState(false);
   const [popupData, setpopupData] = useState(false);
@@ -60,42 +49,6 @@ const PostPage = (props) => {
     setSharedBody(event.target.value);
   };
 
-  const getRunByUserIdAndFeedId = () => {
-    let options = {
-      method: "get",
-      url:
-        global.config.ROOTURL.prod +
-        `/feed/run/getRunByUserIdAndFeedId/${userId}/${postObj._id}`,
-      headers: {
-        Authorization: "Bearer " + accessToken,
-      },
-    };
-    axios(options)
-      .then((response) => {
-        console.log("response", response.data);
-        // setRunsGiven(response.data === 0 ? true  false);
-        setRunsGivenValue(response.data);
-      })
-      .catch((error) => {
-        console.log("error", error);
-      });
-  };
-
-  // const [youtubeUrl, setyoutubeUrl] = useState("");
-
-  useEffect(() => {
-    global.config.socketInstance.on("onFeedChange", async (updatedValue) => {
-      console.log("onFeedChange 2", updatedValue);
-      try {
-        if (updatedValue._id === postObj._id) {
-          setPostObj(updatedValue);
-          getRunByUserIdAndFeedId();
-        }
-      } catch (err) {
-        console.log("error on run change", err);
-      }
-    });
-  }, []);
 
   useEffect(() => {
     setOwnPost(userId === postObj.userId);
@@ -164,7 +117,6 @@ const PostPage = (props) => {
         navigate("/feed");
       })
       .catch((error) => {
-        setShowRuns(!showRuns);
         if (error?.response?.status === 401) {
           clearStorage();
           navigate("/login");
@@ -172,15 +124,6 @@ const PostPage = (props) => {
       });
   };
 
-  useEffect(() => {
-    if (runsGivenValue === 2) {
-      setRunsImage(TwoRuns);
-    } else if (runsGivenValue === 4) {
-      setRunsImage(FourRuns);
-    } else if (runsGivenValue === 6) {
-      setRunsImage(SixRuns);
-    }
-  }, [runsGivenValue, runsGiven]);
 
   const URL_REGEX =
     /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gm;
@@ -449,41 +392,6 @@ const PostPage = (props) => {
                 />
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="runs-hld hld">
-          <RunCard run={postObj?.postRunCount} />
-          <div>
-            {runsGivenValue === 0 && !ownPost && (
-              <ScoreRuns
-                type="post-menu"
-                setShowRuns={setShowRuns}
-                setRunsGiven={setRunsGiven}
-                setRunsScored={setRunsScored}
-                setRunsGivenValue={setRunsGivenValue}
-                ownPost={ownPost}
-                showRuns={showRuns}
-                postObj={postObj}
-              />
-            )}
-            {runsGivenValue !== 0 && !ownPost && (
-              <div className="">
-                <div
-                  style={{
-                    margin: "auto",
-                    display: "flex",
-                    textAlign: "center",
-                  }}
-                >
-                  <img
-                    src={runsImage}
-                    style={{ cursor: "not-allowed" }}
-                    alt="img"
-                  />
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>

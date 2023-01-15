@@ -27,12 +27,6 @@ const Header = (props) => {
   const accessToken = getStorageItem("token");
   const userId = getStorageItem("user_id");
 
-  const [showSecondaryMenu, setShowSecondaryMenu] = useState(false);
-  const handleSecondaryMenu = () => {
-    !showSecondaryMenu
-      ? setShowSecondaryMenu(true)
-      : setShowSecondaryMenu(false);
-  };
 
   const handleMyProfile = () => {
     navigate("/my-profile");
@@ -70,20 +64,6 @@ const Header = (props) => {
         }
       });
   };
-
-  const secondaryMenuRef = useRef();
-
-  useEffect(() => {
-    let handler = (e) => {
-      if (!secondaryMenuRef.current.contains(e.target)) {
-        setShowSecondaryMenu(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => {
-      document.removeEventListener("mousedown", handler);
-    }
-  });
 
   const getRuns = () => {
     const getTotalRun = {
@@ -139,19 +119,6 @@ const Header = (props) => {
   useEffect(() => {
     fetchUserInfo();
     getRuns();
-    global.config.socketInstance.on(
-      "onTotalRunChange",
-      async (updatedValue) => {
-        try {
-          console.log("updatedValue header", updatedValue);
-          if (updatedValue.userId === userId) {
-            setUserRuns(updatedValue.totalRun);
-          }
-        } catch (err) {
-          // console.log('error on run change', err);
-        }
-      }
-    );
   }, []);
 
   return (
@@ -160,7 +127,6 @@ const Header = (props) => {
         <div className="logo-block">
           <NavLink to="/feed">
             <img src={Logo} alt="CricketMedia" />
-            <span className="label title-label">Cricket Media</span>
           </NavLink>
         </div>
 
@@ -193,29 +159,18 @@ const Header = (props) => {
               Feed
             </NavLink>
             <NavLink
-              to="/deals"
+              to="/about-us"
               className={`nav-link ${
-                window.location.pathname.includes("/deals") ? "active" : ""
+                window.location.pathname.includes("/about-us") ? "active" : ""
               }`}
             >
-              Deals
-            </NavLink>
-
-            <NavLink
-              to="/jobs"
-              className={`nav-link ${
-                window.location.pathname.includes("/jobs") ? "active" : ""
-              }`}
-            >
-              Jobs
+              About us
             </NavLink>
           </div>
         )}
 
         {!onlyLogo && (
           <div className="desktop-only profile-block">
-            <Runcard run={userRuns} />
-            <Notification />
             <div className="avatar">
               <img
                 src={userInfo.avatar}
@@ -233,15 +188,7 @@ const Header = (props) => {
                     <ul>
                       <li onClick={handleMyProfile}>My Profile</li>
                     </ul>
-                    <ul>
-                      <li onClick={handleAboutUs}>About us</li>
-                    </ul>
-                    <ul>
-                      <li onClick={handlePrivacy}>privacy</li>
-                    </ul>
-                    <ul>
-                      <li onClick={handleRules}>Rules</li>
-                    </ul>
+                   
                     <ul>
                       <li onClick={handleLogout}>Sign Out</li>
                     </ul>

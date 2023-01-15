@@ -46,7 +46,6 @@ export default function SignIn() {
         <SignInSignUpPageHOC matches={matches}>
             <>
                 <LogoWithTitle fontSize={"120"}/>
-                <HeaderLabel align={'center'}>CricketMedia</HeaderLabel>
                 <InfoLabel align={ 'center'}>For member login use your ID &amp; Password</InfoLabel>
                 <SignInForm breakPoint={matches} />
                 <RegisterHere>

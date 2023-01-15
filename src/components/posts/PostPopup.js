@@ -1,42 +1,29 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
-import CricketMediaButton from "../../commons/form/button";
 import ReactTimeAgo from "react-time-ago";
-import Comments from "../../assets/images/icons/comments.svg";
-import Share from "../../assets/images/icons/share.svg";
 import Runs from "../../assets/images/icons/post-action.png";
 import TwoRuns from "../../assets/images/icons/2run.png";
 import FourRuns from "../../assets/images/icons/4run.png";
 import SixRuns from "../../assets/images/icons/6run.png";
-import cancel from "../../assets/images/icons/cancel-logo.svg";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
 import "./PostPopupStyle.scss";
 import "./PostPopupStyle.css";
 import defaultAvatar from "../../assets/images/profile/default_avatar.png";
 import SendIcon from "@mui/icons-material/Send";
 
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
 import DropdownMenu from "./../dropdown-menu/dropdownMenu";
-import CommentBox from "../comments/CommentBox";
 
-import ScoreRuns from "../runs-dropdown/dropdownMenu";
-import RunCard from "./run";
-import NameCard from "./name-card";
-import { Grid, IconButton, useMediaQuery } from "@mui/material";
+import { IconButton, useMediaQuery } from "@mui/material";
 import ShareModal from "../../commons/components/share-modal/PostModal";
 import { clearStorage, getStorageItem } from "../../utils/sessionStorage";
 import Commentpagination from "./Commentpagination";
-import CloseIcon from "@mui/icons-material/Close";
 
 import { AiOutlineClose } from "react-icons/ai";
 import { BsEmojiSmile } from "react-icons/bs";
-import EmojiPicker from "emoji-picker-react";
 import { MentionsInput, Mention } from "react-mentions";
 
 const style = {
@@ -138,24 +125,6 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
   useEffect(() => {
     setOwnPost(userId === postObj.userId);
     getFeedDetailByFeedId();
-    getRunByUserIdAndFeedId();
-    // getCommentByFeedId();
-    // {postObj.comments && setComments(postObj.comments.length )}
-    // getCommentUser();
-    // getRuns();
-    // checkRuns();
-    console.log("hello 3");
-    global.config.socketInstance.on("onFeedChange", async (updatedValue) => {
-      try {
-        console.log("------onFeedChange------ 3", updatedValue);
-        if (updatedValue._id === postObj._id) {
-          setPostObj(updatedValue);
-          getRunByUserIdAndFeedId();
-        }
-      } catch (err) {
-        // console.log('error on run change', err);
-      }
-    });
   }, []);
 
   useEffect(() => {
@@ -167,27 +136,6 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
   const handleCommentSubmit = () => {
     postComment();
     setComments("");
-  };
-
-  const getRunByUserIdAndFeedId = () => {
-    let options = {
-      method: "get",
-      url:
-        global.config.ROOTURL.prod +
-        `/feed/run/getRunByUserIdAndFeedId/${userId}/${postObj._id}`,
-      headers: {
-        Authorization: "Bearer " + accessToken,
-      },
-    };
-    axios(options)
-      .then((response) => {
-        console.log("response", response.data);
-        // setRunsGiven(response.data === 0 ? true  false);
-        setRunsGivenValue(response.data);
-      })
-      .catch((error) => {
-        console.log("error", error);
-      });
   };
 
   const renderSuggestions = (entry) => {
@@ -317,7 +265,7 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
         "Content-Type": "application/json",
       },
       data: {
-        FeedId: postObj._id,
+        feedId: postObj._id,
         commentText: comments,
       },
     };
@@ -630,20 +578,6 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
     setComments(comments + emoji);
   };
 
-  const emojiRef = useRef();
-
-  useEffect(() => {
-    let handler = (e) => {
-      if (!emojiRef.current.contains(e.target)) {
-        setShowEmojis(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => {
-      document.removeEventListener("mousedown", handler);
-    };
-  });
-
   function replaceHashtags(description) {
     // Use a regular expression to match hashtags that are not already anchor tags
     const regex = /(?!<a[^>]*>)(#(\w+))(?![^<]*<\/a>)/g;
@@ -759,23 +693,6 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
                       </p>
                     </span>
                   </div>
-                  <div className="post-header-right">
-                    <div className="post-edit">
-                      <DropdownMenu
-                        type="post-menu"
-                        postId={postObj._id}
-                        userId={postObj.userId}
-                        setPostObj={setPostObj}
-                        content={postObj.postMessage}
-                        sharedContent={newSharedDetail.sharedText}
-                        image={postObj.postImageURL}
-                        sharedDetail={postObj.sharedDetail}
-                        postObj={postObj}
-                        pageLoad={props.hprops}
-                        className="three-dots"
-                      />
-                    </div>
-                  </div>
                 </div>
                 {/* Post Header */}
                 <div
@@ -785,10 +702,6 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
                       : ""
                   }`}
                 >
-                  {/* <p>{youtubeParser(postObj.postMessage)}</p> */}
-                  {/* <ReactMarkdown
-                    children={youtubeParser(postObj.postMessage)}
-                  /> */}
                   <p
                     dangerouslySetInnerHTML={{
                       __html: removeYouTubeUrls(
@@ -796,120 +709,7 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
                       ),
                     }}
                   />
-                  {/* Icons Section */}
-                  <div className="post-footer border">
-                    {/* <div className="comments-hld hld" onClick={handleComment}> postPopup */}
-                    <div className="comments-box hld">
-                      <img
-                        src={Comments}
-                        className="icon-btn"
-                        alt=""
-                        role="button"
-                      />
-                      <div className="comments-stats">
-                        {postObj.postCommentCount +
-                          (postObj.postCommentCount === 1
-                            ? " Comment"
-                            : " Comments")}
-                      </div>
-                    </div>
-
-                    <div className="hld">
-                      <div
-                        className="share-btn-container share-box"
-                        onClick={() => handleOpen()}
-                      >
-                        <img
-                          src={Share}
-                          className="icon-btn"
-                          alt=""
-                          role="button"
-                        />
-                        <div className="comments-stats">{" Share"}</div>
-                      </div>
-                      <div
-                        className={`share-modal ${
-                          sharing ? "visible" : "hidden"
-                        }`}
-                      >
-                        <div className="share-modal__container">
-                          <div className="share-modal__container__form">
-                            <div className="input-textarea">
-                              <textarea
-                                placeholder="Write Something"
-                                id="sharedBody"
-                                onChange={getSharedBody}
-                              ></textarea>
-                            </div>
-                            <div className="content left">
-                              <div className="avatar">
-                                <img
-                                  className="avatar-image"
-                                  src={avatar}
-                                  alt={""}
-                                />
-                                <div className="avatar-cnt">
-                                  <p>{postObj.userName}</p>
-                                  <p className="date-time">
-                                    {postObj.createdDate}
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="share-modal__container__actions">
-                            <CricketMediaButton
-                              onClick={closeModal}
-                              classes="cancel secondary"
-                              label="Cancel"
-                            />
-                            <CricketMediaButton
-                              onClick={() => sharePost()}
-                              classes="share primary"
-                              label="Share"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className="runs-hld hld"
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        width: 100,
-                        marginTop: 4,
-                      }}
-                    >
-                      <RunCard run={postObj.postRunCount} />
-                      <div className="ball">
-                        {runsGivenValue === 0 && !ownPost && (
-                          <ScoreRuns
-                            type="post-menu"
-                            setShowRuns={setShowRuns}
-                            setRunsGiven={setRunsGiven}
-                            setRunsScored={setRunsScored}
-                            setRunsGivenValue={setRunsGivenValue}
-                            ownPost={ownPost}
-                            showRuns={showRuns}
-                            postObj={postObj}
-                          />
-                        )}
-                        {runsGivenValue !== 0 && !ownPost && (
-                          <div className="">
-                            <div style={{ margin: "auto" }}>
-                              <img
-                                src={runsImage}
-                                className="comment-ball-runs"
-                                alt="img"
-                              ></img>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
+                
                 </div>
               </div>
               {/* Comments Section */}
@@ -919,7 +719,7 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
               {/* Footer Section */}
               <div className="footer-wrapper container-content">
                 <MentionsInput
-                  value={comments}
+                  value={comments?comments:''}
                   name="message"
                   onChange={(e) => {
                     setComments(e.target.value);
@@ -965,15 +765,6 @@ const PostPopup = ({ props, open, setOpen, handleclose, sharedetail }) => {
                   </span>
                 </div>
               </div>
-              {showEmojis ? (
-                <div className="emoji-picker" ref={emojiRef}>
-                  {!mobileView ? (
-                    <EmojiPicker onEmojiClick={onEmojiClick} />
-                  ) : (
-                    <EmojiPicker onEmojiClick={onEmojiClick} width={340} />
-                  )}
-                </div>
-              ) : null}
             </div>
           </div>
         </Box>

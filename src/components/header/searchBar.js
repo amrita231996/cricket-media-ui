@@ -38,15 +38,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   "& .MuiInputBase-input": {
     padding: theme.spacing(0, 0, 0, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    color: "rgba(255, 255, 255, 0.6)",
+    color: "black",
     fontFamily: "Poppins",
     fontStyle: "normal",
-    fontWeight: "300",
-    fontSize: "14px",
+    fontWeight: "600",
+    fontSize: "16px",
     lineHeight: "20px",
     [theme.breakpoints.up("sm")]: {
       width: "20ch",
     },
+    backgroundColor: "#a8a2a2"
   },
 }));
 
@@ -83,17 +84,6 @@ const SearchBar = (props) => {
       }
     }, 1000);
   }
-
-  // useEffect(() => {
-  //   if (searchText) {
-  //     getSearchResults("POST",
-  //       global.config.ROOTURL.prod + "/auth/name-search", {
-  //       searchText: searchText,
-  //       pageNumber: 1,
-  //       pagePerSize: global.config.pagePerSize,
-  //     })
-  //   }
-  // }, [searchText])
 
   return (
     <Box sx={{ flexGrow: 1 }}>

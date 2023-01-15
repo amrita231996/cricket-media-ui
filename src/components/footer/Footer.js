@@ -104,24 +104,6 @@ const Footer = (props) => {
       setValue(null)
     }
   },[path])
-  
-
- 
-
-  
-
-  useEffect(() => {
-    global.config.socketInstance.on('onNewNotification', async (updatedValue) => {
-        try {
-            if (updatedValue.userId === userId) {
-                //....
-                setActiveNotificationsCount(activeNotificationsCount + 1);
-            }
-        } catch (err) {
-            console.log('error on run change', err);
-        }
-    });
-  }, []);
 
 
   return (

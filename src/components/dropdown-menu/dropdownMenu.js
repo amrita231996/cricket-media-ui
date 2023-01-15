@@ -88,7 +88,7 @@ export default function DropdownMenu(props) {
 
     const updatePostDetailsOptions = {
       method: "POST",
-      url: global.config.ROOTURL.prod + "/pitch/update",
+      url: global.config.ROOTURL.prod + "/feed/update",
       headers: {
         Authorization: "Bearer " + accessToken,
       },
@@ -114,7 +114,7 @@ export default function DropdownMenu(props) {
 
     let pitchData = {
       "updatedSharedText": newContent,
-      "pitchId": postId,
+      "feedId": postId,
       "sharedbyUserId": sharedDetail.userId
     }
 
@@ -122,7 +122,7 @@ export default function DropdownMenu(props) {
 
     var UpdateSharedPost = {
       method: "POST",
-      url: global.config.ROOTURL.prod + "/pitch/update-shared-pitch",
+      url: global.config.ROOTURL.prod + "/feed/update-shared-feed",
       headers: {
         Authorization: "Bearer " + accessToken,
       },
@@ -145,7 +145,7 @@ export default function DropdownMenu(props) {
     console.log("in")
     var deletePostOptions = {
       method: "POST",
-      url: global.config.ROOTURL.prod + "/pitch/delete",
+      url: global.config.ROOTURL.prod + "/feed/delete",
       headers: {
         Authorization: "Bearer " + accessToken,
       },
@@ -293,7 +293,7 @@ export default function DropdownMenu(props) {
       <PitchDelete handleOpen={handleOpenPitchDeleteModal}
         handleClose={handleClosePitchDeleteModal}
         open={openPitchDeleteModal}
-        handleDeletePost1={handleDeletePost}
+        handleDeletePost={handleDeletePost}
         postId={postId}
       />
       <Report handleOpen={handleOpenModal}

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import Input from "../../commons/form/input";
-import ChampButton from "../../commons/form/button";
 import Upload from "../../assets/images/onboarding/upload.svg";
 import Avatar from "../../assets/images/onboarding/avatar.svg";
 
@@ -32,7 +31,6 @@ const OnboardingComponent = () => {
   const inviteKey = getStorageItem("inviteKey");
   const navigate = useNavigate();
   // if (firstName && lastName){navigate('/pitch');}
-  const [options, setOptions] = useState([]);
   const [image, setImage] = useState(Avatar);
   const [disabled, setDisabled] = useState(true);
   const [userInfo, setUserInfo] = useState({
@@ -54,43 +52,6 @@ const OnboardingComponent = () => {
   const [success, setSuccess] = useState(false);
   const [style, setStyle] = useState({});
 
-  useEffect(() => {
-    const stateOptions = [
-      { id: "Andhra Pradesh", label: "Andhra Pradesh" },
-      { id: "Arunachal Pradesh", label: "Arunachal Pradesh" },
-      { id: "Assam", label: "Assam" },
-      { id: "Bihar", label: "Bihar" },
-      { id: "Chhattisgarh", label: "Chhattisgarh" },
-      { id: "Goa", label: "Goa" },
-      { id: "Gujarat", label: "Gujarat" },
-      { id: "Haryana", label: "Haryana" },
-      { id: "Himachal Pradesh", label: "Himachal Pradesh" },
-      { id: "Jammu & Kashmir", label: "Jammu & Kashmir" },
-      { id: "Karnataka", label: "Karnataka" },
-      { id: "Kerala", label: "Kerala" },
-      { id: "Madhya Pradesh", label: "Madhya Pradesh" },
-      { id: "Maharashtra", label: "Maharashtra" },
-      { id: "Manipur", label: "Manipur" },
-      { id: "Meghalaya", label: "Meghalaya" },
-      { id: "Mizoram", label: "Mizoram" },
-      { id: "Nagaland", label: "Nagaland" },
-      { id: "Delhi", label: "Delhi" },
-      { id: "Odisha", label: "Odisha" },
-      { id: "Puducherry", label: "Puducherry" },
-      { id: "Punjab", label: "Punjab" },
-      { id: "Rajasthan", label: "Rajasthan" },
-      { id: "Sikkim", label: "Sikkim" },
-      { id: "Tamil Nadu", label: "Tamil Nadu" },
-      { id: "Telangana", label: "Telangana" },
-      { id: "Tripura", label: "Tripura" },
-      { id: "Uttar Pradesh", label: "Uttar Pradesh" },
-      { id: "Uttarakhand", label: "Uttarakhand" },
-      { id: "West Bengal", label: "West Bengal" },
-    ];
-
-    setOptions(stateOptions);
-  }, []);
-
 
   const updateToken = () => {
     var loginOptions = {
@@ -110,7 +71,7 @@ const OnboardingComponent = () => {
         console.log('loginOptions0000', response.data);
         if (response.data.data.match) {
           localStorage.setItem("token", response.data.data.token);
-          navigate("/pitch");
+          navigate("/feed");
         }
       })
       .catch((error) => {

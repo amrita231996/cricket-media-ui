@@ -1,9 +1,9 @@
 import { Text, useContext, useEffect } from "react";
 import Styled from "@emotion/styled";
 import { Carousel } from "react-responsive-carousel";
-import NewImage from "../../assets/images/carousel/Slide1.png";
-import NewImageTwo from "../../assets/images/carousel/slide2.png";
-import NewImageThree from "../../assets/images/carousel/slide3.png";
+import NewImage from "../../assets/images/carousel/Slide 1.png";
+import NewImageTwo from "../../assets/images/carousel/Slide 2.png";
+import NewImageThree from "../../assets/images/carousel/Slide 3.png";
 
 import "./index.scss";
 import LogoWithTitle from "../../components/signin-signup/logo.component";

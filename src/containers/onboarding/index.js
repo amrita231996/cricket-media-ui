@@ -19,7 +19,7 @@ const Onboarding = () => {
      <>
     <div>
     <Helmet>
-      <title>Champhunt | Onboarding</title>
+      <title>Cricket Media | Onboarding</title>
     </Helmet>
     <div style={{ backgroundImage: `url(${BgImage})` }} className='page onboarding'>
         <OnboardingComponent />

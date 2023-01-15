@@ -2,9 +2,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import axios from "axios";
 
-import NewImage from "../../assets/images/carousel/Slide1.png";
-import NewImageTwo from "../../assets/images/carousel/slide2.png";
-import NewImageThree from "../../assets/images/carousel/slide3.png";
+import NewImage from "../../assets/images/carousel/Slide 1.png";
+import NewImageTwo from "../../assets/images/carousel/Slide 2.png";
+import NewImageThree from "../../assets/images/carousel/Slide 3.png";
 import { useNavigate } from "react-router-dom";
 import { clearStorage, getStorageItem } from "../../utils/sessionStorage";
 
@@ -18,24 +18,7 @@ const MyCarousel = () => {
   const [carousel, setCarousel] = useState(null);
 
   const getCarousels = async () => {
-    const options = {
-      method: "GET",
-      url: global.config.ROOTURL.prod + "/carousel/getAllActive",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + accessToken,
-      },
-    };
-    axios(options)
-      .then(({ data }) => {
-        setCarousel(data);
-      })
-      .catch((error) => {
-        if (error?.response?.status == 401) {
-          console.log(error);
-        }
-      });
+        setCarousel([{name:NewImage},{name:NewImageTwo},{name:NewImageThree}]);
   };
   useEffect(() => {
     getCarousels();
@@ -52,13 +35,7 @@ const MyCarousel = () => {
       >
         {carousel ? (
           carousel.map((data, index) => (
-            <div
-              onClick={() => {
-                if (data.link) {
-                  navigate(data.link);
-                }
-              }}
-            >
+            <div key={index}>
               <img alt="carousel" src={data.name} />
             </div>
           ))

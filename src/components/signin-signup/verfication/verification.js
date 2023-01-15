@@ -162,7 +162,8 @@ const Verification = (props) => {
                     <input
                         ref={inputReference1}
                         className={`inputFiled ${verificationText1.length === 1 ? '' : 'required'}`}
-                        type="text" pattern="[0-9]*" inputmode="numeric"
+                        type="text" pattern="[0-9]*" 
+                        inputMode="numeric"
                         maxLength="1"
                         onChange={(e) => {
                             setVerificationText1(e.target.value);

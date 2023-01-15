@@ -4,7 +4,7 @@
     color: #fff;
   }
   .header {
-    background-color: #00298e;
+    background-color: #ebf2fa;
     padding: 10px 0;
 
     & .add-funds {
@@ -24,6 +24,9 @@
           align-items: center;
           color: #ffffff;
           text-decoration: none;
+          & img{
+            width: 170px;
+          }
         }
 
         & .logo-text {
@@ -35,7 +38,7 @@
         & .nav-link {
           text-decoration: none;
           margin-right: 5px;
-          padding: 25px 10px;
+          padding: 10px 10px;
 
           &[aria-current="page"] {
             border-bottom: 5px solid #fcce45;
@@ -48,7 +51,7 @@
           line-height: 21px;
           /* identical to box height */
 
-          color: rgba(255, 255, 255, 0.8);
+          color: #00298e;
         }
         & .nav-link.active {
           font-family: "Poppins";
@@ -58,7 +61,7 @@
           line-height: 21px;
           /* identical to box height */
 
-          color: #ffffff;
+          color: #00298e;
 
           &[aria-current="page"] {
             border-bottom: 5px solid #fcce45;
@@ -177,7 +180,7 @@
           height: 0;
           display: inline-block;
           border: 6px solid transparent;
-          border-top-color: white;
+          border-top-color: #a8a2a2;
         }
       }
     }
@@ -492,7 +495,7 @@
   }
 
   .header {
-    background-color: #00298e;
+    background-color: #ebf2fa;
     padding: 10px 0;
 
     & .add-funds {
@@ -528,6 +531,9 @@
           display: flex;
           align-items: center;
           color: #ffffff;
+          & img{
+            width: 170px;
+          }
         }
 
         & .logo-text {
@@ -548,12 +554,12 @@
         & .nav-link {
           font-family: "Poppins";
           font-style: normal;
-          font-weight: 400;
-          font-size: 14px;
+          font-weight: 600;
+          font-size: 16px;
           line-height: 21px;
           /* identical to box height */
 
-          color: rgba(255, 255, 255, 0.8);
+          color: #00298e;
         }
 
         & .nav-link.active {
@@ -564,12 +570,12 @@
 
           font-family: "Poppins";
           font-style: normal;
-          font-weight: 600;
-          font-size: 14px;
+          font-weight: 700;
+          font-size: 16px;
           line-height: 21px;
           /* identical to box height */
 
-          color: #ffffff;
+          color: #00298e;
 
           &[aria-current="page"] {
             border-bottom: 5px solid #fcce45;
@@ -678,7 +684,7 @@
           height: 0;
           display: inline-block;
           border: 6px solid transparent;
-          border-top-color: white;
+          border-top-color: #a8a2a2;
         }
       }
     }
@@ -954,6 +960,9 @@
           display: flex;
           align-items: center;
           color: #ffffff;
+          & img{
+            width: 170px;
+          }
         }
 
         & .logo-text {

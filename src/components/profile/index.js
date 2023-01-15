@@ -203,7 +203,7 @@ const Profile = (props) => {
             ? response.data.followersCount
             : 0,
           totalRun: response.data.totalRun ? response.data.totalRun : 0,
-          FeedCount: response.data.FeedCount ? response.data.FeedCount : 0,
+          FeedCount: response.data.feedCount ? response.data.feedCount : 0,
         });
       })
       .catch((error) => {
@@ -341,25 +341,6 @@ const Profile = (props) => {
     checkFollower();
   }, [ownFollowings])
 
-  useEffect(() => {
-    global.config.socketInstance.on('onTotalRunChange', async (updatedValue) => {
-      try {
-        console.log('updatedValue prfile',updatedValue);
-        if (updatedValue.userId === userId) {
-          setProfileInitialData((prev) => (
-            {
-              ...prev,
-              totalRun: updatedValue.totalRun
-            }
-          ));
-        }
-      } catch (err) {
-        // console.log('error on run change', err);
-      }
-    });
-  }, []);
-
-  // // console.log(toggleSubmenu)
   return (
     <>
       <Grid container className="profile_detail">
@@ -424,17 +405,12 @@ const Profile = (props) => {
                 </div>
               </div>
             </Grid>
-            <Grid item md={2} className="total_run">
-              <div className="profile_run">
-                <Run run={profileInitialData.totalRun} />
-              </div>
-            </Grid>
           </Grid>
-          <Grid container className="profile_stats">
+          <Grid container className="profile_stats"> 
             <Grid item md={2}>
               <div className="profile_label" onClick={() => handleSubmenuChange("mypost")}>
                 <div className="label_container">
-                  <label className="profile_lable_text">Post</label>
+                  <label className="profile_lable_text">Feed</label>
                   <label className="profile_lable_number">
                     {profileInitialData.FeedCount}
                   </label>

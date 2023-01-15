@@ -55,24 +55,6 @@ const Notification = () => {
     });
   };
 
-useEffect(()=>{
-  global.config.socketInstance.on('onNewNotification', async (updatedValue) => {
-    try {
-        if (updatedValue.userId === userId) {
-            //....
-            setcustNotifications(oldArray => {
-              
-              console.log(oldArray)
-            return !oldArray.includes(updatedValue)?[updatedValue, ...oldArray]:[...oldArray]
-          });
-            setActiveNotificationsCount(activeNotificationsCount + 1);
-        }
-    } catch (err) {
-        console.log('socket onNewNotification', err);
-    }
-  });
-},[])
-
   return (
     <div className="notification">
       <a href="javascript:void(0)">

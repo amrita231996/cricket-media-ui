@@ -7,19 +7,6 @@ function CommentUseScroller(pageNum, req, FeedId) {
   const [list, setList] = useState([]);
   const [hasMore, setHasMore] = useState(false);
 
-
-  useEffect(() => {
-    global.config.socketInstance.on("onNewCommentCreated", async (updatedValue) => {
-      try {
-        if (updatedValue.postId === FeedId) {
-          setList([{...updatedValue},...list].sort((a,b)=>(new Date(b.createdDate) - new Date(a.createdDate))));
-        }
-      } catch (err) {
-        console.log('error on run change', err);
-      }
-    });
-  }, [])
-
   useEffect(() => {
 
     const CancelToken = axios.CancelToken;

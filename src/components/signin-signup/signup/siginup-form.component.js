@@ -195,14 +195,14 @@ export default function SignUpForm(props) {
               <InputAdornment position="end">
                 <IconButton
                   aria-label="toggle password visibility"
-                  // onClick={handleClickShowPassword}
+                  onClick={handleClickShowPassword}
                   // onMouseDown={handleMouseDownPassword}
                   edge="end"
                 >
                   <CIcon
                     src={passwordShown ? VisibilityOffIcon : VisibilityIcon}
                     fontSize={24}
-                    onClick={handleClickShowPassword}
+                    // onClick={handleClickShowPassword}
                   />
                 </IconButton>
               </InputAdornment>
@@ -252,7 +252,7 @@ export default function SignUpForm(props) {
           variant="contained"
           sx={{ mt: 3, mb: 2, textTransform: "none", fontSize: 18 }}
         >
-          Send OTP
+          REGISTER
         </SubmitButton>
 
 

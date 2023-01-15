@@ -1,0 +1,149 @@
+.search_page {
+    // margin-top: 0px !important;
+    padding: 16px;
+
+    & .recent_search {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 36px;
+        /* identical to box height, or 129% */
+
+        letter-spacing: 0.1px;
+
+        color: #1A1919;
+
+    }
+
+    & .profile_post {
+        padding-right: 20px;
+    }
+
+    & .profile_post_submenu {
+        //     background: #FFFFFF;
+        // border: 1px solid #F1F1F5;
+        // box-sizing: border-box;
+        // border-radius: 4px;
+    }
+
+    & .matching_profilies_btn,
+    .post_btn {
+        // margin-right: 10px;
+        border-radius: 0 !important;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 150%;
+        /* identical to box height, or 21px */
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        /* Neutral / White */
+
+        color: #FFFFFF;
+    }
+
+    & .matching_profilies_btn.outlined,
+    .post_btn.outlined{
+        color:  #979797;
+    }
+    & .matching_profilies_btn.contained,
+    .post_btn.contained{
+        color:  #FFFFFF;
+    }
+}
+
+
+.component.search {
+    max-width: 1200px;
+    margin: 20px auto;
+
+    & .hidden {
+        display: none;
+    }
+
+    & .search-holder {
+        background-color: #383B5A;
+        padding: 45px 45px 25px 45px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    & .search-content {
+        color: #cfcfcf;
+
+        & .bold {
+            font-weight: bold;
+        }
+    }
+
+    & .input .input-element {
+        border: 1px solid #CFCFCF;
+        background: #F5F5F7;
+        color: #000000;
+        padding: 12px;
+        outline: none;
+        font-size: 12px;
+        border-radius: 8px;
+        font-family: inherit;
+    }
+
+    & .related-profiles {
+        & .heading {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #cfcfcf;
+        }
+
+        &.suggestions {
+            margin-left: 0;
+        }
+
+        & .profiles {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 25px;
+
+            & .suggestion {
+                flex-grow: 1;
+
+                &:not(:last-child) {
+                    margin-right: 25px;
+                }
+            }
+        }
+    }
+
+    & .posts .post {
+        border: 1px solid #49528F;
+    }
+
+    & .posts-container {
+
+        max-width: 75%;
+        margin: auto;
+        margin-top: 25px;
+
+        & .role {
+            padding: 8px 35px;
+            background-color: #D9DAFF;
+            border: none;
+            border-radius: 8px;
+            margin-right: 8px;
+            font-family: inherit;
+
+            &.active {
+                background-color: #131639;
+                color: #cfcfcf;
+            }
+        }
+    }
+}
+
+.view-all {
+    cursor: pointer
+}

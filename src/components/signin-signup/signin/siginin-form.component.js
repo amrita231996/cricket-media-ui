@@ -158,12 +158,6 @@ export default function SignInForm({ breakPoint }) {
     })
   };
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setAlert(false);
-  //   }, 5000);
-  // }, [alert]);
-
   useEffect(() => {
     localStorage.clear();
   }, []);
@@ -173,10 +167,6 @@ export default function SignInForm({ breakPoint }) {
     <>
       {alert ? (
         <Stack sx={{ width: "100%" }} spacing={2}>
-          {/* <Alert severity="error">
-                <AlertTitle>Error</AlertTitle>
-                — <strong></strong>
-            </Alert> */}
           <Alert severity="error">
             <AlertTitle>
               <strong>

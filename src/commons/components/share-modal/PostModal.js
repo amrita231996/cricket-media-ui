@@ -90,13 +90,13 @@ const ShareModal = (props) => {
       },
       data: {
         comment: formContent.message,
-        FeedId: postObj._id,
+        feedId: postObj._id,
       }
     }
     axios(shared)
     .then((response) => {
       props.pageLoad()
-    handleModalClose();
+      handleModalClose();
     })
   .then((response) => {
     navigate("/feed")

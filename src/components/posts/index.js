@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef, useCallback } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Post from "./post";
 import { BallTriangle } from "react-loader-spinner";
@@ -66,19 +65,6 @@ const Posts = (props) => {
     },
     [isLoading, hasMore]
   );
-
-  useEffect(() => {
-    global.config.socketInstance.on("onFeedCreated", async (followers) => {
-      console.log('onFeedCreated',followers);
-      try {
-        if (followers.includes(userId)) {
-          setShowNewFeedBaner(true);
-        }
-      } catch (err) {
-        // console.log("error on run change", err);
-      }
-    });
-  }, []);
 
   return (
     <>

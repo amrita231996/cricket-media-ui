@@ -10,6 +10,7 @@ import AuthContainer from "../AuthContainer";
 import Onboarding from "../../containers/onboarding";
 import FeedesPage from "../../containers/feed/index";
 import FeedPage from "../../containers/feed/feed-page";
+import SearchPage from "../../containers/search";
 import AdminDashboard from "../../containers/admin";
 import AboutUs from "../../containers/aboutus";
 import OwnProfileDetailsPage from "../../containers/profile/index";
@@ -153,7 +154,14 @@ const AppRoutes = () => {
             </AuthGuardRoute>
           }
         />
-    
+    <Route
+          path={"/search"}
+          element={
+            <AuthGuardRoute>
+              <SearchPage />
+            </AuthGuardRoute>
+          }
+        />
         <Route
           path={"/suggestions"}
           element={
